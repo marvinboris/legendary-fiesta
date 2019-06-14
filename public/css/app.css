@@ -10700,18 +10700,70 @@ footer .partners img {
 .custom-scrollbar::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 12px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: var(--purple);
+}
+
+.home-page .authorization-card.card {
+  position: relative;
+  transition: transform 0.25s;
+}
+
+.home-page .authorization-card.card:hover {
+  z-index: 10;
+  transform: scale(1.04);
+}
+
+.home-page .maps #gmap_canvas img {
+  max-width: none !important;
+  background: none !important;
+}
+
+.home-page .maps > div.row {
+  overflow: hidden;
+  position: relative;
+}
+
+.home-page .maps > div.row div:nth-child(2) {
+  position: absolute;
+  width: 80%;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000;
+  text-align: center;
+}
+
+.home-page .maps > div.row div:nth-child(2) > small {
+  line-height: 1.8;
+  font-size: 2px;
+  background: #fff;
+}
+
+.home-page .our-online-courses {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/images/CIV.jpg");
+}
+
+.home-page #carousel-home-page {
+  height: calc(100vh - 104.22px);
+}
+
+.home-page #carousel-home-page ol.carousel-indicators li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
 .home-page #carousel-home-page div.carousel-inner div.carousel-item {
@@ -10732,43 +10784,49 @@ footer .partners img {
   background-image: linear-gradient(to right, rgba(52, 144, 220, 0.85), rgba(149, 97, 226, 0.85)), url("/images/WhatsApp-Image-2018-11-20-at-17.50.53.jpeg");
 }
 
-.home-page #carousel-home-page div.carousel-inner div.carousel-item > div {
-  position: relative;
-  z-index: 21;
-  width: 100%;
-  height: 100%;
+.home-page #carousel-home-page div.carousel-inner div.carousel-item div.container h1.d-md-none,
+.home-page #carousel-home-page div.carousel-inner div.carousel-item div.container div.w-100:last-child {
+  flex: 0 0 100%;
 }
 
-.home-page #carousel-home-page div.carousel-inner div.carousel-item > div > div.angle {
-  position: absolute;
-  z-index: -1;
-  top: -50%;
-  left: 45%;
-  border: 2px solid var(--purple);
-  height: 200%;
-  width: 100%;
-  min-width: 200px;
-  transform: rotate(25deg);
-  background-image: linear-gradient(to right, rgba(52, 144, 220, 0.85), rgba(52, 144, 220, 0.85));
+.home-page #carousel-home-page div.carousel-inner div.carousel-item div.container h1.d-none,
+.home-page #carousel-home-page div.carousel-inner div.carousel-item div.container div.w-100.lead {
+  flex: 0 0 80%;
 }
 
-.home-page #carousel-home-page ol.carousel-indicators li {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+.login-page {
+  min-height: calc(100vh);
+  background-image: linear-gradient(to right, rgba(52, 144, 220, 0.8), rgba(149, 97, 226, 0.8)), url("/images/car-dealer-34.jpg");
 }
 
-.home-page .authorization-card.card {
-  position: relative;
-  transition: transform 0.25s;
+.login-page .btn,
+.login-page a {
+  font: inherit;
 }
 
-.home-page .authorization-card.card:hover {
-  z-index: 10;
-  transform: scale(1.04);
+.login-page div.shadow.bg-white.rounded {
+  font-size: 1rem;
 }
 
-.home-page .our-online-courses {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/images/CIV.jpg");
+.login-page div.shadow.bg-white.rounded div.logo img {
+  width: 200px;
+}
+
+.signup-page {
+  min-height: calc(100vh);
+  background-image: linear-gradient(to right, rgba(52, 144, 220, 0.8), rgba(149, 97, 226, 0.8)), url("/images/car-dealer-34.jpg");
+}
+
+.signup-page .btn,
+.signup-page a {
+  font: inherit;
+}
+
+.signup-page div.shadow.bg-white.rounded {
+  font-size: 1rem;
+}
+
+.signup-page div.shadow.bg-white.rounded div.logo img {
+  width: 200px;
 }
 

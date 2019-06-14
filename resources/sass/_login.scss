@@ -1,0 +1,20 @@
+// Login
+.login-page {
+  min-height: calc(100vh);
+  background-image: linear-gradient(to right, rgba(52, 144, 220, 0.8), rgba(149, 97, 226, 0.8)), url('/images/car-dealer-34.jpg');
+
+  .btn,
+  a {
+    font: inherit;
+  }
+
+  div.shadow.bg-white.rounded {
+    font-size: 1rem;
+
+    div.logo{
+        img {
+            width: 200px;
+        }
+    }
+  }
+}

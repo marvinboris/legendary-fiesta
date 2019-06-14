@@ -3,7 +3,7 @@
 @section('content')
     <div class="row m-0 home-page">
         <div class="col-12 p-0">
-            <div id="carousel-home-page" class="carousel slide carousel-fade" data-ride="carousel" style="height: calc(100vh - 112.22px)">
+            <div id="carousel-home-page" class="carousel slide carousel-fade" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-home-page" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-home-page" data-slide-to="1"></li>
@@ -11,38 +11,32 @@
                 </ol>
                 <div class="carousel-inner h-100">
                     <div class="carousel-item h-100 active">
-                        <div class="text-center text-light overflow-hidden">
-                            <div class="angle d-none" style="left: 35%;"></div>
-                            <div class="angle d-none"></div>
+                        <div class="text-center text-light h-100">
                             <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
-                                <h1 class="w-100 text-uppercase text-white d-md-none" style="flex: 0 0 100%;">Une nouvelle pédagogie de l'auto école</h1>
-                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block" style="flex: 0 0 80%;">Une nouvelle pédagogie de l'auto école</h1>
-                                <div class="lead w-100" style="flex: 0 0 80%;"><p>Apprenez à conduire avec les techniques de votre temps.</p></div>
-                                <div class="w-100" style="flex: 0 0 100%;"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Une nouvelle pédagogie de l'auto école</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Une nouvelle pédagogie de l'auto école</h1>
+                                <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div>
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <div class="text-center text-light overflow-hidden">
-                            <div class="angle d-none" style="left: 35%;"></div>
-                            <div class="angle d-none"></div>
+                        <div class="text-center text-light h-100">
                             <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
-                                <h1 class="w-100 text-uppercase text-white d-md-none" style="flex: 0 0 100%;">Paiement accepté</h1>
-                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block" style="flex: 0 0 80%;">Paiement accepté</h1>
-                                <div class="lead w-100" style="flex: 0 0 80%;"><p>Des moyens de paiement révolutionnaires : Bitcoin, LIMO, Orange / MTN Mobile Money.</p></div>
-                                <div class="w-100" style="flex: 0 0 100%;"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Paiement accepté</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Paiement accepté</h1>
+                                <div class="lead w-100"><p>Des moyens de paiement révolutionnaires : Bitcoin, LIMO, Orange / MTN Mobile Money.</p></div>
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item h-100">
-                        <div class="text-center text-light overflow-hidden">
-                            <div class="angle d-none" style="left: 35%;"></div>
-                            <div class="angle d-none"></div>
+                        <div class="text-center text-light h-100">
                             <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
-                                <h1 class="w-100 text-uppercase text-white d-md-none" style="flex: 0 0 100%;">Plateforme d'e-learning</h1>
-                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block" style="flex: 0 0 80%;">Plateforme d'e-learning</h1>
-                                <div class="lead w-100" style="flex: 0 0 80%;"><p>Une plateforme de cours en ligne avec différents thèmes sur la conduite automobile, le code de la route, des exercices corrigés, des questions-réponses avec d’autres intervenants et nos formateurs.</p></div>
-                                <div class="w-100" style="flex: 0 0 100%;"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Plateforme d'e-learning</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Plateforme d'e-learning</h1>
+                                <div class="lead w-100"><p>Une plateforme de cours en ligne avec différents thèmes sur la conduite automobile, le code de la route, des exercices corrigés, des questions-réponses avec d’autres intervenants et nos formateurs.</p></div>
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
                             </div>
                         </div>
                     </div>
@@ -242,7 +236,12 @@
             </div>
         </div>
         <div class="col-12 maps">
-            <div class="row" style="overflow:hidden;position: relative;"><iframe width="100%" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Douala%2C%20Cameroun+(Auto-%C3%A9cole%20universit%C3%A9)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"><small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by <a href="https://embedgooglemaps.com/de/">embedgooglemaps DE</a> & <a href="https://lasagradafamiliatickets.de/la-sagrada-familia-ticket/">hier buchen</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
+            <div class="row">
+                <iframe width="100%" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Douala%2C%20Cameroun+(Auto-%C3%A9cole%20universit%C3%A9)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <div>
+                    <small>Powered by <a href="https://embedgooglemaps.com/de/">embedgooglemaps DE</a> & <a href="https://lasagradafamiliatickets.de/la-sagrada-familia-ticket/">hier buchen</a></small>
+                </div>
+            </div>
         </div>
         <div class="col-12 p-0 map-markers bg-light">
             <div class="container">

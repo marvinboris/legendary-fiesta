@@ -1,0 +1,92 @@
+// Home
+.home-page {
+  .authorization-card.card {
+    position: relative;
+    transition: transform 0.25s;
+
+    &:hover {
+      z-index: 10;
+      transform: scale(1.04);
+    }
+  }
+
+  .maps {
+    #gmap_canvas img {
+      max-width: none !important;
+      background: none !important;
+    }
+
+    & > div.row {
+      overflow: hidden;
+      position: relative;
+
+      div:nth-child(2) {
+        position: absolute;
+        width: 80%;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        color: #000;
+        text-align: center;
+
+        > small {
+          line-height: 1.8;
+          font-size: 2px;
+          background: #fff;
+        }
+      }
+    }
+  }
+
+  .our-online-courses {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("/images/CIV.jpg");
+  }
+
+  #carousel-home-page {
+    height: calc(100vh - 104.22px);
+
+    ol.carousel-indicators li {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    div.carousel-inner div.carousel-item {
+      background-size: cover;
+      background-color: var(--dark);
+      background-position: center;
+
+      &:nth-child(1) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.7), rgba(149, 97, 226, 0.7)),
+          url("/images/auto1.jpg");
+        // background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('/images/auto1.jpg');
+      }
+
+      &:nth-child(2) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.7), rgba(149, 97, 226, 0.7)),
+          url("/images/auto2.jpg");
+        // background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('/images/auto2.jpg');
+      }
+
+      &:nth-child(3) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.85), rgba(149, 97, 226, 0.85)),
+          url("/images/WhatsApp-Image-2018-11-20-at-17.50.53.jpeg");
+        // background-image: linear-gradient(to right, rgba(0, 0, 0, .85), rgba(0, 0, 0, .85)), url('/images/WhatsApp-Image-2018-11-20-at-17.50.53.jpeg');
+      }
+
+      div.container {
+        h1.d-md-none,
+        div.w-100:last-child {
+          flex: 0 0 100%;
+        }
+
+        h1.d-none,
+        div.w-100.lead {
+          flex: 0 0 80%;
+        }
+      }
+    }
+  }
+}
