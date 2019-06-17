@@ -1,5 +1,5 @@
 @include('includes.head')
-    <main>
+    <main id="app">
         @yield('content')
     </main>
 @include('includes.foot')

@@ -12,7 +12,7 @@
         </div>
     </div>
 </div>
-<nav class="navbar navbar-expand-lg navbar-light text-uppercase bg-white shadow-sm position-sticky" style="top: 0; z-index: 1080;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm position-sticky" style="top: 0; z-index: 1080;">
     <div class="container">
         <a class="navbar-brand img-responsive" href="{{ url('/') }}">
             <img src="{{ url('/') . '/images/LOGO AUTO ECOLE UNIVERSITE.png' }}" height="50" alt="Logo de l'auto école université">
@@ -23,39 +23,50 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto text-uppercase">
                 <li class="nav-item font-weight-bold"><a href="{{ url('/') }}" class="nav-link {{ !Request::segment(1) ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-home"></i>Accueil</a></li>
                 <li class="nav-item font-weight-bold"><a href="{{ route('training') }}" class="nav-link {{ Request::segment(1) === 'training' ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-graduation-cap"></i>Formations</a></li>
                 <li class="nav-item font-weight-bold"><a href="{{ url('/') }}" class="nav-link {{ Request::segment(1) === 'news' ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-newspaper-o"></i>Actualités</a></li>
-                @guest
-                @else
-                    <li class="nav-item font-weight-bold"><a href="{{ route('course') }}" class="nav-link {{ Request::segment(1) === 'course' ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-book"></i>Cours en ligne</a></li>
-                @endguest
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto" style="font-family: Raleway;">
+            <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item">
+                    <li class="nav-item text-uppercase login">
                         <a class="nav-link {{ Request::segment(1) === 'login' ? 'active' : null }}" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item">
+                        <li class="nav-item text-uppercase signup">
                             <a class="nav-link {{ Request::segment(1) === 'register' ? 'active' : null }}" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                         </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown user">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ strtoupper(Auth::user()->name) }} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                {{ __('Déconnexion') }}
+                            @php
+                                $userRole = null;
+                                switch(Auth::user()->role->name) {
+                                    case 'Administrateur':
+                                        $userRole = 'admin';
+                                        break;
+                                    case 'Etudiant':
+                                        $userRole = 'student';
+                                        break;
+                                    case 'Enseignant':
+                                        $userRole = 'teacher';
+                                        break;
+                                }
+                            @endphp
+                            <a href="{{ route($userRole . '.dashboard') }}" class="dropdown-item {{ Request::segment(2) === 'dashboard' ? 'active' : null }}"><i class="fa mr-2 fa-dashboard"></i>Dashboard</a>                            
+                            <a href="{{ route('course') }}" class="dropdown-item {{ Request::segment(1) === 'course' ? 'active' : null }}"><i class="fa mr-2 fa-book"></i>Cours en ligne</a>
+                            <a class="dropdown-item border-top" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa fa-power-off mr-2"></i> {{ __('Déconnexion') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

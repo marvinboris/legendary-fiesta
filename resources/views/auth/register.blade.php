@@ -13,8 +13,10 @@
                     </div>
     
                     <div class="text-center text-uppercase h2 font-weight-light m-0 p-0 mt-3">{{ __('Inscription') }}</div>
+                    
+                    <p class="text-muted text-center">L'inscription est gratuite mais nécessite l'aval de l'administrateur.</p>
 
-                    <div class="card-body">
+                    <div>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
     

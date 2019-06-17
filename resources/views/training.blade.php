@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Formations | 
+@endsection
+
 @section('content')
     <div class="row m-0 training">
         <div class="col-12 p-0 bg-primary-purple text-light">
@@ -17,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 p-0 bg-white text-dark">
+        <div class="col-12 p-0 bg-white text-dark" id="permisA">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-lg-6">
@@ -47,7 +51,7 @@
             </div>
         </div>
         <div class="col-12 p-0 bg-primary-purple big-border"></div>
-        <div class="col-12 p-0 bg-light text-dark">
+        <div class="col-12 p-0 bg-light text-dark" id="permisB">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-lg-6">
@@ -125,7 +129,7 @@
             </div>
         </div>
         <div class="col-12 p-0 bg-primary-purple big-border"></div>
-        <div class="col-12 p-0 bg-white text-dark">
+        <div class="col-12 p-0 bg-white text-dark" id="permisC">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-lg-6">
@@ -153,7 +157,7 @@
             </div>
         </div>
         <div class="col-12 p-0 bg-primary-purple big-border"></div>
-        <div class="col-12 p-0 bg-light text-dark">
+        <div class="col-12 p-0 bg-light text-dark" id="permisD">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-lg-6">
@@ -182,7 +186,7 @@
             </div>
         </div>
         <div class="col-12 p-0 bg-primary-purple big-border"></div>
-        <div class="col-12 p-0 bg-white text-dark">
+        <div class="col-12 p-0 bg-white text-dark" id="permisE">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-lg-6">
@@ -210,7 +214,7 @@
             </div>
         </div>
         <div class="col-12 p-0 bg-primary-purple big-border"></div>
-        <div class="col-12 p-0 bg-light text-dark">
+        <div class="col-12 p-0 bg-light text-dark" id="permisG">
             <div class="container py-5">
                 <div class="row">
                     <div class="col-lg-6">

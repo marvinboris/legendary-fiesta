@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -19,7 +20,7 @@ class UsersTableSeeder extends Seeder
             'role_id' => 1,
             'is_active' => 1,
             'email' => 'jaris.ultio.21@gmail.com',
-            'password' => bcrypt('Marvinboris21')
+            'password' => Hash::make('Marvinboris21')
         ]);
     }
 }

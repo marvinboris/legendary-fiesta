@@ -10647,19 +10647,25 @@ a.text-dark:focus {
 }
 
 body {
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
   font-weight: 900;
 }
 
-footer .partners img {
+body li.nav-item.login,
+body li.nav-item.signup,
+body li.nav-item.user {
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body footer .partners img {
   width: 300px;
   max-width: 100%;
 }
@@ -10689,6 +10695,10 @@ footer .partners img {
   background-image: linear-gradient(to right, rgba(52, 144, 220, 0.8), rgba(149, 97, 226, 0.8)) !important;
 }
 
+.font-family-raleway {
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 .font-weight-thick {
   font-weight: 900;
 }
@@ -10700,12 +10710,12 @@ footer .partners img {
 .custom-scrollbar::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  background-color: #f5f5f5;
+  background-color: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 12px;
-  background-color: #f5f5f5;
+  width: 6px;
+  background-color: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
@@ -10828,5 +10838,40 @@ footer .partners img {
 
 .signup-page div.shadow.bg-white.rounded div.logo img {
   width: 200px;
+}
+
+:root {
+  --auth-navbar-width: 250px;
+  --aside-nav-height: 59.28px;
+}
+
+header.container-fluid.auth-navbar {
+  top: 0;
+  z-index: 1100;
+}
+
+header.container-fluid.auth-navbar div.left {
+  width: var(--auth-navbar-width);
+}
+
+header.container-fluid.auth-navbar div.left img.logo {
+  width: 150px;
+}
+
+header.container-fluid.auth-navbar div.right {
+  width: calc(100% - var(--auth-navbar-width));
+  flex: 0 0 calc(100% - var(--auth-navbar-width));
+}
+
+aside.nav {
+  height: calc(100vh - var(--aside-nav-height));
+  width: var(--auth-navbar-width);
+  top: var(--aside-nav-height);
+  overflow-y: auto;
+}
+
+main.auth-zone {
+  margin-left: var(--auth-navbar-width);
+  margin-top: var(--aside-nav-height);
 }
 

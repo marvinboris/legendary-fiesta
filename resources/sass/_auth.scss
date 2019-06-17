@@ -1,0 +1,36 @@
+// Authenticated zone
+:root {
+  --auth-navbar-width: 250px;
+  --aside-nav-height: 59.28px;
+}
+
+// Navbar
+header.container-fluid.auth-navbar {
+  top: 0;
+  z-index: 1100;
+
+  div.left {
+    width: var(--auth-navbar-width);
+
+    img.logo {
+      width: 150px;
+    }
+  }
+
+  div.right {
+    width: calc(100% - var(--auth-navbar-width));
+    flex: 0 0 calc(100% - var(--auth-navbar-width));
+  }
+}
+
+aside.nav {
+  height: calc(100vh - var(--aside-nav-height));
+  width: var(--auth-navbar-width);
+  top: var(--aside-nav-height);
+  overflow-y: auto;
+}
+
+main.auth-zone {
+  margin-left: var(--auth-navbar-width);
+  margin-top: var(--aside-nav-height);
+}

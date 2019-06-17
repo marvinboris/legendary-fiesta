@@ -1,6 +1,6 @@
 @include('includes.head')
     @include('includes.navbar')
-    <main>
+    <main id="app">
         @yield('content')
     </main>
     @include('includes.footer')

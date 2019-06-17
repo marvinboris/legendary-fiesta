@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Accueil |
+@endsection
+
 @section('content')
     <div class="row m-0 home-page">
         <div class="col-12 p-0">
@@ -16,7 +20,9 @@
                                 <h1 class="w-100 text-uppercase text-white d-md-none">Une nouvelle pédagogie de l'auto école</h1>
                                 <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Une nouvelle pédagogie de l'auto école</h1>
                                 <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div>
+                                @guest
                                 <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
                             </div>
                         </div>
                     </div>
@@ -26,7 +32,9 @@
                                 <h1 class="w-100 text-uppercase text-white d-md-none">Paiement accepté</h1>
                                 <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Paiement accepté</h1>
                                 <div class="lead w-100"><p>Des moyens de paiement révolutionnaires : Bitcoin, LIMO, Orange / MTN Mobile Money.</p></div>
+                                @guest
                                 <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
                             </div>
                         </div>
                     </div>
@@ -36,7 +44,9 @@
                                 <h1 class="w-100 text-uppercase text-white d-md-none">Plateforme d'e-learning</h1>
                                 <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Plateforme d'e-learning</h1>
                                 <div class="lead w-100"><p>Une plateforme de cours en ligne avec différents thèmes sur la conduite automobile, le code de la route, des exercices corrigés, des questions-réponses avec d’autres intervenants et nos formateurs.</p></div>
+                                @guest
                                 <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
                             </div>
                         </div>
                     </div>
@@ -96,7 +106,7 @@
                                         <li><i class="fa fa-li fa-usd"></i>Formation accélérée : 100 000 FCFA</li>
                                     </ul>
                                 </p>
-                                <a href="#" class="card-link">En savoir plus</a>
+                                <a href="{{ route('training') . '#permisA' }}" class="card-link">En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -114,7 +124,7 @@
                                         <li><i class="fa fa-li fa-usd"></i>Formation accélérée : 300 000 FCFA</li>
                                     </ul>
                                 </p>
-                                <a href="#" class="card-link">En savoir plus</a>
+                                <a href="{{ route('training') . '#permisB' }}" class="card-link">En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +142,7 @@
                                         <li><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA</li>
                                     </ul>
                                 </p>
-                                <a href="#" class="card-link">En savoir plus</a>
+                                <a href="{{ route('training') . '#permisC' }}" class="card-link">En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +160,7 @@
                                         <li><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA</li>
                                     </ul>
                                 </p>
-                                <a href="#" class="card-link">En savoir plus</a>
+                                <a href="{{ route('training') . '#permisD' }}" class="card-link">En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -168,7 +178,7 @@
                                         <li><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA</li>
                                     </ul>
                                 </p>
-                                <a href="#" class="card-link">En savoir plus</a>
+                                <a href="{{ route('training') . '#permisE' }}" class="card-link">En savoir plus</a>
                             </div>
                         </div>
                     </div>
@@ -186,7 +196,7 @@
                                         <li><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA</li>
                                     </ul>
                                 </p>
-                                <a href="#" class="card-link">En savoir plus</a>
+                                <a href="{{ route('training') . '#permisG' }}" class="card-link">En savoir plus</a>
                             </div>
                         </div>
                     </div>                    
