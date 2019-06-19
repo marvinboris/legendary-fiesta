@@ -17,6 +17,7 @@ class CreateTrainingUserTable extends Migration
             $table->bigIncrements('id');
             $table->integer('training_id')->index();
             $table->integer('user_id')->index();
+            $table->timestamps();
         });
     }
 

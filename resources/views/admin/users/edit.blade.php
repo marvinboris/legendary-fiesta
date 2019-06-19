@@ -29,21 +29,6 @@
             <label for="email" class="control-label">Adresse mail</label>
             <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}" required>
         </div>
-        <div class="form-group">
-            <label for="password" class="control-label">Mot de passe</label>
-            <input type="password" name="password" id="password" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="is_active" class="control-label">Statut</label>
-            <div class="custom-control custom-radio">
-                <input type="radio" name="is_active" id="inactive" class="custom-control-input" {{ $user->is_active === 0 ? 'checked' : null }} value="0">
-                <label for="inactive" class="custom-control-label">Inactif</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" name="is_active" id="active" class="custom-control-input" {{ $user->is_active === 1 ? 'checked' : null }} value="1">
-                <label for="active" class="custom-control-label">Actif</label>
-            </div>
-        </div>
         <div class="form-group"><button class="btn btn-primary">Modifier</button></div>
     </form>
 @endsection

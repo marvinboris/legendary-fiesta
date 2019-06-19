@@ -32,17 +32,6 @@
             <label for="password" class="control-label">Mot de passe</label>
             <input type="password" name="password" id="password" class="form-control" required>
         </div>
-        <div class="form-group">
-            <label for="is_active" class="control-label">Statut</label>
-            <div class="custom-control custom-radio">
-                <input type="radio" name="is_active" id="inactive" class="custom-control-input" value="0">
-                <label for="inactive" class="custom-control-label">Inactif</label>
-            </div>
-            <div class="custom-control custom-radio">
-                <input type="radio" name="is_active" id="active" class="custom-control-input" value="1">
-                <label for="active" class="custom-control-label">Actif</label>
-            </div>
-        </div>
         <div class="form-group"><button class="btn btn-primary">Ajouter</button></div>
     </form>
 @endsection

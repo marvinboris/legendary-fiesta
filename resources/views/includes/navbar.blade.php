@@ -63,7 +63,8 @@
                                 }
                             @endphp
                             <a href="{{ route($userRole . '.dashboard') }}" class="dropdown-item {{ Request::segment(2) === 'dashboard' ? 'active' : null }}"><i class="fa mr-2 fa-dashboard"></i>Dashboard</a>                            
-                            <a href="{{ route('course') }}" class="dropdown-item {{ Request::segment(1) === 'course' ? 'active' : null }}"><i class="fa mr-2 fa-book"></i>Cours en ligne</a>
+                            <a href="{{ route('trainings.mine.index') }}" class="dropdown-item {{ Request::segment(1) === 'course' ? 'active' : null }}"><i class="fa mr-2 fa-book"></i>Mes formations</a>
+                            <a href="{{ route('profile') }}" class="dropdown-item {{ Request::segment(1) === 'profile' ? 'active' : null }}"><i class="fa mr-2 fa-user"></i>Mon profil</a>
                             <a class="dropdown-item border-top" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fa fa-power-off mr-2"></i> {{ __('Déconnexion') }}

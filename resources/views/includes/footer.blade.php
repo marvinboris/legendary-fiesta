@@ -1,5 +1,9 @@
 <footer class="container-fluid bg-white">
     <div class="row big-border bg-primary-purple"></div>
+    <div class="row big-border bg-primary-purple"></div>
+    <div class="row big-border bg-primary-purple"></div>
+    <div class="row big-border bg-primary-purple"></div>
+    <div class="row big-border bg-primary-purple"></div>
     <div class="faq py-5">
         <div class="container">
             <h1 class="text-center">Foire aux <span class="text-purple">questions</span></h1>

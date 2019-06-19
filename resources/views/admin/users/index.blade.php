@@ -38,7 +38,6 @@
                         <th scope="col">Nom(s) & prénom(s)</th>
                         <th scope="col">Adresse mail</th>
                         <th scope="col">Rôle</th>
-                        <th scope="col">Statut</th>
                         <th scope="col">Créé</th>
                         <th scope="col">Modifié</th>
                     </tr>
@@ -53,7 +52,6 @@
                             <td><a href="{{ route('admin.users.edit', $user->id) }}">{{ $user->name }}</a></td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role->name }}</td>
-                            <td>{!! $user->is_active ? '<span class=" font-weight-bold text-success">Actif</span>' : '<span class=" font-weight-bold text-danger">Inactif</span>' !!}</td>
                             <td>{{ $user->created_at->diffForHumans() }}</td>
                             <td>{{ $user->updated_at->diffForHumans() }}</td>
                         </tr>

@@ -34,9 +34,10 @@
             @if (Auth::user()->isAdmin())
                 <li class="nav-item"><a href="{{ route('admin.trainings.index') }}" class="nav-link text-light {{ (Request::segment(3) === 'trainings' AND !Request::segment(4)) ? 'active' : null }}"><i class="fa fa-shopping-cart mr-2"></i>Liste des formations</a></li>
                 <li class="nav-item"><a href="{{ route('admin.trainings.create') }}" class="nav-link text-light {{ (Request::segment(3) === 'trainings' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-cart-plus mr-2"></i>Ajouter une formation</a></li>
+            @else
+                <li class="nav-item"><a href="{{ route('trainings.mine.index') }}" class="nav-link text-light {{ (Request::segment(3) === 'trainings' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-cart-arrow-down mr-2"></i>Mes formations</a></li>
+                <li class="nav-item"><a href="{{ route('trainings.index') }}" class="nav-link text-light {{ (Request::segment(3) === 'trainings' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-caret-square-o-down mr-2"></i>Souscrire à une formation</a></li>
             @endif
-            <li class="nav-item"><a href="{{ url('/') }}" class="nav-link text-light {{ (Request::segment(3) === 'trainings' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-cart-arrow-down mr-2"></i>Mes formations</a></li>
-            <li class="nav-item"><a href="{{ url('/') }}" class="nav-link text-light {{ (Request::segment(3) === 'trainings' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-caret-square-o-down mr-2"></i>Souscrire à une formation</a></li>
         </nav>
     </div>
     @if (Auth::user()->isAdmin())

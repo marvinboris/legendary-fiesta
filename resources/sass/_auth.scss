@@ -7,7 +7,7 @@
 // Navbar
 header.container-fluid.auth-navbar {
   top: 0;
-  z-index: 1100;
+  z-index: 1030;
 
   div.left {
     width: var(--auth-navbar-width);
@@ -33,4 +33,12 @@ aside.nav {
 main.auth-zone {
   margin-left: var(--auth-navbar-width);
   margin-top: var(--aside-nav-height);
+}
+
+#accordionExample {
+  h5 {
+    img {
+      height: 2rem;
+    }
+  }
 }

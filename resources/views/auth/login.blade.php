@@ -60,7 +60,7 @@
     
                             <div class="form-group mb-0">
                                 <div>
-                                    <button type="submit" class="btn btn-primary btn-block">
+                                    <button type="submit" class="btn btn-primary bg-primary-purple btn-block">
                                         {{ __('Se connecter') }}
                                     </button>
     
@@ -69,6 +69,9 @@
                                             {{ __('Mot de passe oublié ?') }}
                                         </a>
                                     @endif
+                                    <a class="btn btn-link" href="{{ route('register') }}">
+                                        {{ __('Je n\'ai pas de compte') }}
+                                    </a>
                                 </div>
                             </div>
                         </form>

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700,800,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&display=swap);@import url(https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -10647,7 +10647,7 @@ a.text-dark:focus {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body h1,
@@ -10659,10 +10659,16 @@ body h6 {
   font-weight: 900;
 }
 
+body u {
+  text-decoration: none;
+  border-bottom: 1px solid;
+  padding-bottom: 0px;
+}
+
 body li.nav-item.login,
 body li.nav-item.signup,
 body li.nav-item.user {
-  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Raleway, Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body footer .partners img {
@@ -10696,7 +10702,7 @@ body footer .partners img {
 }
 
 .font-family-raleway {
-  font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Raleway, Nunito, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .font-weight-thick {
@@ -10704,7 +10710,7 @@ body footer .partners img {
 }
 
 .big-border {
-  height: 10px;
+  height: 2px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -10840,6 +10846,24 @@ body footer .partners img {
   width: 200px;
 }
 
+.email-page {
+  min-height: calc(100vh);
+  background-image: linear-gradient(to right, rgba(52, 144, 220, 0.8), rgba(149, 97, 226, 0.8)), url("/images/car-dealer-34.jpg");
+}
+
+.email-page .btn,
+.email-page a {
+  font: inherit;
+}
+
+.email-page div.shadow.bg-white.rounded {
+  font-size: 1rem;
+}
+
+.email-page div.shadow.bg-white.rounded div.logo img {
+  width: 200px;
+}
+
 :root {
   --auth-navbar-width: 250px;
   --aside-nav-height: 59.28px;
@@ -10847,7 +10871,7 @@ body footer .partners img {
 
 header.container-fluid.auth-navbar {
   top: 0;
-  z-index: 1100;
+  z-index: 1030;
 }
 
 header.container-fluid.auth-navbar div.left {
@@ -10873,5 +10897,9 @@ aside.nav {
 main.auth-zone {
   margin-left: var(--auth-navbar-width);
   margin-top: var(--aside-nav-height);
+}
+
+#accordionExample h5 img {
+  height: 2rem;
 }
 

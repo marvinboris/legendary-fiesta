@@ -247,9 +247,9 @@
         </div>
         <div class="col-12 maps">
             <div class="row">
-                <iframe width="100%" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=Douala%2C%20Cameroun+(Auto-%C3%A9cole%20universit%C3%A9)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <iframe width="100%" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=La%20maison%20du%20bitcoin+(Auto-%C3%A9cole%20Universit%C3%A9)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 <div>
-                    <small>Powered by <a href="https://embedgooglemaps.com/de/">embedgooglemaps DE</a> & <a href="https://lasagradafamiliatickets.de/la-sagrada-familia-ticket/">hier buchen</a></small>
+                    <small>Powered by <a href="https://embedgooglemaps.com/es/">embedgooglemaps ES</a> & <a href="https://lasagradafamiliatickets.de/la-sagrada-familia-ticket/">tickets</a></small>
                 </div>
             </div>
         </div>

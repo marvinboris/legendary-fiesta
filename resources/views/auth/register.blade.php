@@ -13,8 +13,6 @@
                     </div>
     
                     <div class="text-center text-uppercase h2 font-weight-light m-0 p-0 mt-3">{{ __('Inscription') }}</div>
-                    
-                    <p class="text-muted text-center">L'inscription est gratuite mais nécessite l'aval de l'administrateur.</p>
 
                     <div>
                         <form method="POST" action="{{ route('register') }}">
@@ -72,10 +70,14 @@
     
                             <div class="form-group mb-0">
                                 <div>
-                                    <button type="submit" class="btn btn-primary btn-block">
+                                    <button type="submit" class="btn btn-primary bg-primary-purple btn-block">
                                         {{ __('S\'inscrire') }}
                                     </button>
                                 </div>
+
+                                <a class="btn btn-link" href="{{ route('login') }}">
+                                    {{ __('J\'ai déjà un compte') }}
+                                </a>
                             </div>
                         </form>
                     </div>

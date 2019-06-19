@@ -3,6 +3,9 @@ use App\User;
 use App\Training;
 use App\Document;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,10 +41,30 @@ Route::middleware('auth')->group(function () {
         return view('profile', compact('user'));
     })->name('profile');
 
+    Route::post('/profile', function (Request $request) {
+        $user = Auth::user();
+        $validatedInput = $request->validate([
+            'name' => 'required|max:100',
+            'email' => 'required|max:50',
+            'new_password' => 'confirmed'
+        ]);
+        foreach ($validatedInput as $key => $value) {
+            $validatedInput[$key] = htmlspecialchars($value);
+        }
+        if ($request->has('password')) {
+            if (Hash::check($request->password, $user->password)) {
+                $validatedInput['password'] = Hash::make($request->new_password);
+            }
+        }
+        $user->update($validatedInput);
+        Session::flash('edited_profile', 'Les paramètres de votre compte ont été édités.');
+        return redirect(route('profile'));
+    })->name('profile.store');
+
     Route::middleware('admin')->group(function () {
         Route::get('/admin/dashboard', function () {
-            $teachers = User::where('role_id', 2)->get();
-            $students = User::where('role_id', 3)->get();
+            $teachers = User::where('role_id', 3)->get();
+            $students = User::where('role_id', 2)->get();
             $trainings = Training::all();
             $documents = Document::all();
             return view('admin.dashboard', compact('teachers', 'students', 'trainings', 'documents'));
@@ -65,7 +88,25 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('student')->group(function () {
         Route::get('/student/dashboard', function () {
-            return view('student.dashboard');
+            $user = Auth::user();
+            $sumProgress = 0;
+            $sumRemaining = 0;
+            $current = 0;
+            $documentsArray = [];
+            foreach ($user->trainings as $training) {
+                $progress = Training::progress($training->id);
+                $remaining = Training::remaining($training->id);
+                $sumProgress += $progress;
+                $sumRemaining += $remaining;
+                if ($progress < 100) $current++;
+                foreach ($training->category->documents as $document) {
+                    if (!in_array($document->id, $documentsArray)) {
+                        $documentsArray[] = $document->id;
+                    }
+                }
+            }
+            $documents = count($documentsArray);
+            return view('student.dashboard', compact('user', 'sumProgress', 'sumRemaining', 'documents', 'current'));
         })->name('student.dashboard');
     });
 
@@ -74,4 +115,9 @@ Route::middleware('auth')->group(function () {
             return view('teacher.dashboard');
         })->name('teacher.dashboard');
     });
+
+    Route::name('trainings.mine.show')->get('/trainings/mine/{training}', 'TrainingsController@showMine');
+    Route::name('trainings.mine.index')->get('/trainings/mine', 'TrainingsController@mine');
+    Route::name('trainings.show')->get('/trainings/{training}', 'TrainingsController@show');
+    Route::name('trainings.index')->get('/trainings', 'TrainingsController@index');
 });
