@@ -1,6 +1,12 @@
 @extends('layouts.auth')
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Liste des formations</li>
+        </ol>
+    </nav>
     @if (Session::has('created_training'))
     <div class="alert alert-success">{{ session('created_training') }}</div>
     @endif
@@ -11,9 +17,13 @@
     <div class="alert alert-danger">{{ session('deleted_training') }}</div>
     @endif
     @if (Session::has('deleted_trainings'))
-    @foreach (session('deleted_trainings') as $training)
-        <div class="alert alert-danger">La catégorie {{ $training->name }} a été supprimée.</div>
-    @endforeach
+        <div class="alert alert-danger">
+            <ul class="list-unstyled">
+                @foreach (session('deleted_trainings') as $training)
+                    <li>La catégorie {{ $training->name }} a été supprimée.</li>
+                @endforeach
+            </ul>
+        </div>
     @endif
     <h2>
         <span class="fa-stack small">

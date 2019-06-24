@@ -1,7 +1,13 @@
 @extends('layouts.auth')
 
 @section('content')
-<h2>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tableau de bord</li>
+        </ol>
+    </nav>
+    <h2>
         <span class="fa-stack small">
             <i class="fa fa-square fa-stack-2x text-primary"></i>
             <i class="fa fa-dashboard fa-stack-1x text-light"></i>
@@ -30,7 +36,7 @@
                     <i class="fa fa-line-chart fa-3x"></i>
                     <p class="text-right">
                         <span class="small">Progression moyenne</span><br>
-                        <span class="h3">{{ $sumProgress / $current }}%</span>
+                        <span class="h3">{{ $current > 0 ? ($sumProgress / $current) : $current }}%</span>
                     </p>
                 </div>
                 <div class="border-top border-light small pt-1">
@@ -44,7 +50,7 @@
                     <i class="fa fa-calendar-check-o fa-3x"></i>
                     <p class="text-right">
                         <span class="small">Nombre moyen de jours restants</span><br>
-                        <span class="h3">{{ round($sumRemaining / $current) }}</span>
+                        <span class="h3">{{ $current > 0 ?(round($sumRemaining / $current)) : $current }}</span>
                     </p>
                 </div>
                 <div class="border-top border-light small pt-1">

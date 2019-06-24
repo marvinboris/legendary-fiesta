@@ -1,6 +1,13 @@
 @extends('layouts.auth')
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.users.index') }}">Liste des utilisateurs</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $user->name }}</li>
+        </ol>
+    </nav>
     <h2>
         <span class="fa-stack small">
             <i class="fa fa-square fa-stack-2x text-primary"></i>

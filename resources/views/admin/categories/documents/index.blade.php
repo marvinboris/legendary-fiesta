@@ -1,6 +1,12 @@
 @extends('layouts.auth')
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Liste des documents</li>
+        </ol>
+    </nav>
     @if (Session::has('created_document'))
         <div class="alert alert-success">{{ session('created_document') }}</div>
     @endif
@@ -11,9 +17,13 @@
         <div class="alert alert-danger">{{ session('deleted_document') }}</div>
     @endif
     @if (Session::has('deleted_documents'))
-        @foreach (session('deleted_documents') as $document)
-            <div class="alert alert-danger">Le document {{ $document->name }} a été supprimé.</div>
-        @endforeach
+    <div class="alert alert-danger">
+        <ul class="list-unstyled">
+            @foreach (session('deleted_documents') as $document)
+                <li>Le document {{ $document->name }} a été supprimé.</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
     <h2>
         <span class="fa-stack small">

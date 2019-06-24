@@ -75,7 +75,7 @@
                                     </button>
                                 </div>
 
-                                <a class="btn btn-link" href="{{ route('login') }}">
+                                <a href="{{ route('login') }}">
                                     {{ __('J\'ai déjà un compte') }}
                                 </a>
                             </div>

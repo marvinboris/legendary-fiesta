@@ -1,6 +1,12 @@
 @extends('layouts.auth')
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Mon profil</li>
+        </ol>
+    </nav>
     @if (Session::has('edited_profile'))
         <div class="alert alert-primary">{{ session('edited_profile') }}</div>
     @endif

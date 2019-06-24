@@ -27,7 +27,8 @@ class Training extends Model
         $user = Auth::user();
         $training = $user->trainings()->where('trainings.id', $id)->get()->first();
         $start = strtotime($training->pivot->created_at);
-        return round((time() - $start) * 100 / ($training->duration * 86400));
+        $result = round((time() - $start) * 100 / ($training->duration * 86400));
+        return $result > 100 ? 100 : $result;
     }
 
     public static function remaining($id)
@@ -35,6 +36,7 @@ class Training extends Model
         $user = Auth::user();
         $training = $user->trainings()->where('trainings.id', $id)->get()->first();
         $start = strtotime($training->pivot->created_at);
-        return $training->duration - round((time() - $start) / 86400);
+        $result = $training->duration - round((time() - $start) / 86400);
+        return $result < 0 ? 0 : $result;
     }
 }

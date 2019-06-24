@@ -1,6 +1,12 @@
 @extends('layouts.auth')
 
 @section('content')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Liste des rôles</li>
+        </ol>
+    </nav>
     @if (Session::has('created_role'))
         <div class="alert alert-success">{{ session('created_role') }}</div>
     @endif
@@ -11,9 +17,13 @@
         <div class="alert alert-danger">{{ session('deleted_role') }}</div>
     @endif
     @if (Session::has('deleted_roles'))
-        @foreach (session('deleted_roles') as $role)
-            <div class="alert alert-danger">Le rôle {{ $role->name }} a été supprimé.</div>
-        @endforeach
+    <div class="alert alert-danger">
+        <ul class="list-unstyled">
+            @foreach (session('deleted_roles') as $role)
+                <li>Le rôle {{ $role->name }} a été supprimé.</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
     <h2>
         <span class="fa-stack small">

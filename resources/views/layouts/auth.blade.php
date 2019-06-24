@@ -15,7 +15,7 @@
     @endphp
     @include('includes.auth-header-navbar')
     @include('includes.auth-aside-navbar')
-        <main id="app" class="auth-zone text-dark p-3">
-            @yield('content')
-        </main>
+    <main id="app" class="auth-zone text-dark p-3">
+        @yield('content')
+    </main>
 @include('includes.foot')

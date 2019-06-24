@@ -30,6 +30,9 @@ Route::get('/training', function () {
     return view('training');
 })->name('training');
 
+Route::get('/news', function () {
+    return view('news');
+})->name('news');
 
 Route::middleware('auth')->group(function () {
     Route::get('/course', function () {
@@ -120,4 +123,5 @@ Route::middleware('auth')->group(function () {
     Route::name('trainings.mine.index')->get('/trainings/mine', 'TrainingsController@mine');
     Route::name('trainings.show')->get('/trainings/{training}', 'TrainingsController@show');
     Route::name('trainings.index')->get('/trainings', 'TrainingsController@index');
+    Route::name('wecashup.payment')->post('/wecashup/payment', 'WecashupController@payment');
 });
