@@ -1,6 +1,7 @@
 
 <form action="https://autoecoleuniversite.com/wecashup/payment" method="POST" id="wecashup">
-
+    {{-- @csrf --}}
+    <input type="hidden" name="training_id" value="{{ $training->id }}">
     <script async src="https://www.wecashup.com/library/MobileMoney.js" class="wecashup_button"
     data-demo
     data-sender-lang="fr"

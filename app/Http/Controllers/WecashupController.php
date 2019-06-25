@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Wecashup;
+use Illuminate\Support\Facades\Session;
 
 class WecashupController extends Controller
 {
     //
     public function payment(Request $request)
     {
-        header('Access-Control-Allow-Origin: *');
-        header('Access-Control-Allow-Methods: GET, POST');
+        // header('Access-Control-Allow-Origin: *');
+        // header('Access-Control-Allow-Methods: GET, POST');
 
-        return $request->all();
-
+        $training_id = 0;
         $merchant_uid = 'oVLJd1IZlURWWyX2JJR0IfCSwqC2';
         $merchant_public_key = 'pk_live_df3FRABCpT27ccDK';
         $merchant_secret = 'sk_live_tegP86cVdXy2qpZ1RESxpcTXy74Ij6lZG5W0Jf3NzPo9';
@@ -21,15 +22,27 @@ class WecashupController extends Controller
         $transaction_token  = ''; // create an empty transaction_token
         $transaction_provider_name  = ''; // create an empty transaction_provider_name
         $transaction_confirmation_code  = ''; // create an empty confirmation code
+
+        if ($request->has('training_id')) $training_id = htmlspecialchars($request->training_id);
         if ($request->has('transaction_uid')) $transaction_uid = htmlspecialchars($request->transaction_uid); // Get the transaction_uid posted by the payment box
         if ($request->has('transaction_token')) $transaction_token  = htmlspecialchars($request->transaction_token); // Get the transaction_token posted by the payment box
         if ($request->has('transaction_provider_name')) $transaction_provider_name  = htmlspecialchars($request->transaction_provider_name); // Get the transaction_provider_name posted by the payment box
         if ($request->has('transaction_confirmation_code')) $transaction_confirmation_code  = htmlspecialchars($request->transaction_confirmation_code); // Get the transaction_confirmation_code posted by the payment box
+
         $url = 'https://www.wecashup.com/api/v2.0/merchants/' . $merchant_uid . '/transactions/' . $transaction_uid . '?merchant_public_key=' . $merchant_public_key;
 
         //Steps 7 : You must complete this script at this to save the current transaction in your database.
         /* Provide a table with at least 5 columns in your database capturing the following
-	/  transaction_uid | transaction_confirmation_code| transaction_token| transaction_provider_name | transaction_status */
+    /  transaction_uid | transaction_confirmation_code| transaction_token| transaction_provider_name | transaction_status */
+        $transaction = Wecashup::create([
+            'user_id' => Auth::user()->id,
+            'training_id' => $training_id,
+            'merchant_secret' => $merchant_secret,
+            'transaction_token' => $transaction_token,
+            'transaction_uid' => $transaction_uid,
+            'transaction_confirmation_code' => $transaction_confirmation_code,
+            'transaction_provider_name' => $transaction_provider_name,
+        ]);
 
 
         //Step 8 : Sending data to the WeCashUp Server
@@ -63,18 +76,23 @@ class WecashupController extends Controller
         curl_close($ch);
 
         $data = json_decode($server_output, true);
+        $transaction->status = $data['response_status'] == "success";
+        $transaction->save();
 
         if ($data['response_status'] == "success") {
 
             //Do wathever you want to tell the user that it's transaction succeed or redirect him/her to a success page
 
             $location = 'https://www.wecashup.cloud/cdn/tests/websites/PHP/responses_pages/success.html';
-            // Auth::user()->trainings()->attach();
+            Session::flash('transaction_success', 'La transaction est en cours de traitement. Vous recevrez un mail de confirmation une fois son traitement terminé.');
+            return redirect(route('trainings.show', $training_id));
         } else {
 
             //Do wathever you want to tell the user that it's transaction failed or redirect him/her to a failure page
-
+            return $data;
             $location = 'https://www.wecashup.cloud/cdn/tests/websites/PHP/responses_pages/failure.html';
+            Session::flash('transaction_failure', 'La transaction n\'a pas abouti. Veuillez réessayer.');
+            return redirect(route('trainings.show', $training_id));
         }
 
         //redirect to your feedback page
@@ -83,7 +101,6 @@ class WecashupController extends Controller
 
     public function webhook(Request $request)
     {
-        return $request->all();
         /****************************VERY IMPORTANT TO READ ***************************
                             WECASHUP DEFAULT WEBHOOK                      
                                                                           
@@ -136,29 +153,29 @@ class WecashupController extends Controller
         if ($request->has('transaction_token')) $received_transaction_token  = htmlspecialchars($request->transaction_token); //Get the transaction_token posted by WeCashUp
         if ($request->has('transaction_type')) $received_transaction_type  = htmlspecialchars($request->transaction_type); //Get the transaction_type posted by WeCashUp
 
-        echo '<br><br> received_transaction_merchant_secret : ' . $received_transaction_merchant_secret;
-        echo '<br><br> received_transaction_uid : ' . $received_transaction_uid;
-        echo '<br><br> received_transaction_token : ' . $received_transaction_token;
-        echo '<br><br> received_transaction_details : ' . $received_transaction_details;
-        echo '<br><br> received_transaction_amount : ' . $received_transaction_amount;
-        echo '<br><br> received_transaction_status : ' . $received_transaction_status;
-        echo '<br><br> received_transaction_type : ' . $received_transaction_type;
+        // echo '<br><br> received_transaction_merchant_secret : ' . $received_transaction_merchant_secret;
+        // echo '<br><br> received_transaction_uid : ' . $received_transaction_uid;
+        // echo '<br><br> received_transaction_token : ' . $received_transaction_token;
+        // echo '<br><br> received_transaction_details : ' . $received_transaction_details;
+        // echo '<br><br> received_transaction_amount : ' . $received_transaction_amount;
+        // echo '<br><br> received_transaction_status : ' . $received_transaction_status;
+        // echo '<br><br> received_transaction_type : ' . $received_transaction_type;
 
         /***** SAVE THIS IN YOUD DATABASE - start ****************/
 
-        $file = $received_transaction_uid . '.txt';
-        $txt = "received_transaction_merchant_secret : " . $received_transaction_merchant_secret . "\n" .
-            "received_transaction_uid : " . $received_transaction_uid . "\n" .
-            "received_transaction_token : " . $received_transaction_token . "\n" .
-            "received_transaction_details : " . $received_transaction_details . "\n" .
-            "received_transaction_amount : " . $received_transaction_amount . "\n" .
-            "received_transaction_receiver_currency : " . $received_transaction_receiver_currency . "\n" .
-            "received_transaction_status : " . $received_transaction_status . "\n" .
-            "received_transaction_type : " . $received_transaction_type . "\n";
+        // $file = $received_transaction_uid . '.txt';
+        // $txt = "received_transaction_merchant_secret : " . $received_transaction_merchant_secret . "\n" .
+        //     "received_transaction_uid : " . $received_transaction_uid . "\n" .
+        //     "received_transaction_token : " . $received_transaction_token . "\n" .
+        //     "received_transaction_details : " . $received_transaction_details . "\n" .
+        //     "received_transaction_amount : " . $received_transaction_amount . "\n" .
+        //     "received_transaction_receiver_currency : " . $received_transaction_receiver_currency . "\n" .
+        //     "received_transaction_status : " . $received_transaction_status . "\n" .
+        //     "received_transaction_type : " . $received_transaction_type . "\n";
 
-        $myfile = fopen($file, "w") or die("Unable to open file!");
-        fwrite($myfile, $txt);
-        fclose($myfile);
+        // $myfile = fopen($file, "w") or die("Unable to open file!");
+        // fwrite($myfile, $txt);
+        // fclose($myfile);
 
         /***** SAVE THIS IN YOUD DATABASE - end ****************/
 
@@ -171,9 +188,13 @@ class WecashupController extends Controller
             echo '<br><br> merchant_secret [MATCH]';
 
             //Now check if you have a transaction with the received_transaction_uid and received_transaction_token
+            $transaction = Wecashup::where('merchant_secret', $merchant_secret)->where('transaction_uid', $received_transaction_uid)->where('transaction_token', $received_transaction_token)->get()->first();
+            if (!$transaction) return;
 
-            $database_transaction_uid = 'TEST_UID'; //************* LOAD FROM YOUR DATABASE ****************
-            $database_transaction_token = 'TEST_TOKEN'; //************* LOAD FROM YOUR DATABASE ****************
+            // $database_transaction_uid = 'TEST_UID'; //************* LOAD FROM YOUR DATABASE ****************
+            $database_transaction_uid = $transaction->transaction_uid; //************* LOAD FROM YOUR DATABASE ****************
+            // $database_transaction_token = 'TEST_TOKEN'; //************* LOAD FROM YOUR DATABASE ****************
+            $database_transaction_token = $transaction->transaction_token; //************* LOAD FROM YOUR DATABASE ****************
 
             if ($received_transaction_uid != null && $received_transaction_uid == $database_transaction_uid) {
                 //received_transaction_merchant_secret is Valid
@@ -196,29 +217,40 @@ class WecashupController extends Controller
         if ($authenticated == 'true') {
 
             //Update and process your transaction
+            $transaction = Wecashup::where('merchant_secret', $merchant_secret)->where('transaction_uid', $received_transaction_uid)->where('transaction_token', $received_transaction_token)->get()->first();
 
             if ($received_transaction_status == "PAID") {
                 //Save the transaction status in your database and do whatever you want to tell the user that it's transaction succeed
-                echo '<br><br> transaction_status : ' . $transaction_status;
+                echo '<br><br> transaction_status : ' . $received_transaction_status;
+                User::findOrFail($transaction->user_id)->training()->attach($transaction->training_id);
             } else { //Status = FAILED
 
                 //Save the transaction status in your database and do whatever you want to tell the user that it's transaction failed
-                echo '<br><br> transaction_status : ' . $transaction_status;
+                echo '<br><br> transaction_status : ' . $received_transaction_status;
             }
 
             /***** SAVE THIS IN YOUD DATABASE - start ****************/
 
-            $file = 'transactions.txt';
-            $txt = "received_transaction_merchant_secret : " . $received_transaction_merchant_secret . "\n" .
-                "received_transaction_uid : " . $received_transaction_uid . "\n" .
-                "received_transaction_token : " . $received_transaction_token . "\n" .
-                "received_transaction_details : " . $received_transaction_details . "\n" .
-                "received_transaction_status : " . $received_transaction_status . "\n" .
-                "received_transaction_type : " . $received_transaction_type . "\n";
+            // $file = 'transactions.txt';
+            // $txt = "received_transaction_merchant_secret : " . $received_transaction_merchant_secret . "\n" .
+            //     "received_transaction_uid : " . $received_transaction_uid . "\n" .
+            //     "received_transaction_token : " . $received_transaction_token . "\n" .
+            //     "received_transaction_details : " . $received_transaction_details . "\n" .
+            //     "received_transaction_status : " . $received_transaction_status . "\n" .
+            //     "received_transaction_type : " . $received_transaction_type . "\n";
 
-            $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-            fwrite($myfile, $txt);
-            fclose($myfile);
+            // $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+            // fwrite($myfile, $txt);
+            // fclose($myfile);
+
+            $transaction->update([
+                'transaction_details' => $received_transaction_details,
+                'transaction_amount' => $received_transaction_amount,
+                'transaction_receiver_currency' => $received_transaction_receiver_currency,
+                'transaction_status' => $received_transaction_status,
+                'transaction_type' => $received_transaction_type,
+            ]);
+
             /***** SAVE THIS IN YOUD DATABASE - end ****************/
 
             /*
@@ -227,7 +259,7 @@ class WecashupController extends Controller
 					delivery process if the transaction succeed.
 		*/
         }
-	
+
         /* If the one of the 3 parameters above doesn't match, this default webhook script will ignore the request. 
         You can also save them in your logs if you want to keep track of everything that happens here.
         
@@ -236,6 +268,3 @@ class WecashupController extends Controller
         */
     }
 }
-
-
-
