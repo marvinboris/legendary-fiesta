@@ -120,8 +120,8 @@
                                     <ul class="fa-ul lead">
                                         <li><i class="fa fa-li fa-train"></i>Véhicule de tourisme</li>
                                         <li><i class="fa fa-li fa-clock-o"></i>18 ans et plus</li>
-                                        <li><i class="fa fa-li fa-money"></i>Formation normale : 250 000 FCFA</li>
-                                        <li><i class="fa fa-li fa-usd"></i>Formation accélérée : 300 000 FCFA</li>
+                                        <li><i class="fa fa-li fa-money"></i>Formation normale : 120 000 FCFA</li>
+                                        <li><i class="fa fa-li fa-usd"></i>Formation accélérée : 150 000 FCFA</li>
                                     </ul>
                                 </p>
                                 <a href="{{ route('training') . '#permisB' }}" class="card-link">En savoir plus</a>

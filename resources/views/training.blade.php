@@ -62,66 +62,51 @@
                         <div class="custom-scrollbar" style="max-height: 300px; overflow-y: scroll;">
                             <ul class="fa-ul lead">
                                 <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i>Âge : 18 ans et plus</li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 250 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i><u>NB :</u> Pour les samedis et les jours fériés, les cours s'arrêtent à 14h.</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 120 000 FCFA
                                     <ul class="font-weight-light">
                                         <li>Durée de 2 mois</li>
                                         <li>2h de théorie</li>
                                         <li>45min de pratique</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation accélérée : 300 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation accélérée : 150 000 FCFA
                                     <ul class="font-weight-light">
                                         <li>Durée d'1 mois</li>
                                         <li>3h de théorie</li>
                                         <li>90min de pratique</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation spéciale weekend : 300 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation pro (Weekend + Soir) : 180 000 FCFA
                                     <ul class="font-weight-light">
                                         <li>Durée de 2 mois</li>
-                                        <li>Samedi, Dimanche et jours fériés</li>
-                                        <li>3h de théorie</li>
-                                        <li>90min de pratique</li>
+                                        <li>2h de théorie (En soirée)</li>
+                                        <li>60min de pratique (Samedi et Dimanche)</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation prestige : 365 000 FCFA
-                                    <ul class="font-weight-light">
-                                        <li>Durée d'1 mois</li>
-                                        <li>3h de théorie</li>
-                                        <li>90min de pratique</li>
-                                        <li>Selon l'endroit et l'heure souhaités</li>
-                                    </ul>
-                                </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation capacité : 130 000 FCFA
-                                    <ul class="font-weight-light">
-                                        <li>Durée d'1 mois</li>
-                                        <li>2h de théorie</li>
-                                        <li>45min de pratique</li>
-                                    </ul>
-                                </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation engin : 600 000 FCFA
-                                    <ul class="font-weight-light">
-                                        <li>Durée d'1 mois</li>
-                                        <li>3h de théorie</li>
-                                        <li>40min de pratique</li>
-                                    </ul>
-                                </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation conduite assistée : 15 000 FCFA/h <span class="font-weight-light">(pour se familiariser avec son propre véhicule)</span>
-                                </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation conduite défensive : 200 000 FCFA
-                                    <ul class="font-weight-light">
-                                        <li>Durée de 7 jours</li>
-                                        <li>2h de théorie</li>
-                                        <li>40min de pratique</li>
-                                    </ul>
-                                </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation conduite de nuit : 150 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation prestige : 200 000 FCFA
                                     <ul class="font-weight-light">
                                         <li>Durée de 10 jours</li>
-                                        <li>40min de pratique</li>
+                                        <li>3h de théorie (1 séance)</li>
+                                        <li>90min de pratique (3 séances)</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-calendar"></i>Période de formation : 8h - 10h | 11h - 13h | 15h - 17h | 17h - 19h</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation capacité (catégorie T) : 80 000 FCFA
+                                    <ul class="font-weight-light">
+                                        <li>Durée de 10 jours</li>
+                                        <li>30min de pratique (10 séances)</li>
+                                    </ul>
+                                </li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Conduite de nuit : 100 000 FCFA
+                                    <ul class="font-weight-light">
+                                        <li>Durée de 10 jours</li>
+                                        <li>Tous les jours</li>
+                                    </ul>
+                                </li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Permis international : 150 000 FCFA</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Conversion permis : 150 000 FCFA</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Extension (C, D, E, G) : 100 000 FCFA</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-calendar"></i>Période de formation : 9h - 12h | 12h - 14h | 14h - 16h | 16h - 18h | 18h - 20h</li>
                             </ul>
                         </div>
                     </div>
@@ -237,6 +222,28 @@
                                     <li>40min de pratique</li>
                                 </ul>
                             </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 p-0 bg-primary-purple text-white">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Formalités d'inscription</h1>
+                        <ul class="fa-ul lead">
+                            <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i><u>Inscription :</u> 10 000 FCFA</li>
+                            <li class="font-weight-bold"><i class="fa fa-li fa-book"></i><u>Documentation :</u> 10 000 FCFA</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-12">
+                        <h1>Formalités d'examen national</h1>
+                        <ul class="fa-ul lead">
+                            <li class="font-weight-bold"><i class="fa fa-li fa-square"></i>Carnet de suivi : 5 000 FCFA</li>
+                            <li class="font-weight-bold"><i class="fa fa-li fa-square"></i>Frais de dossier : 30 000 FCFA</li>
+                            <li class="font-weight-bold"><i class="fa fa-li fa-square"></i>Photocopie CNI</li>
+                            <li class="font-weight-bold"><i class="fa fa-li fa-square"></i>3 photos 4*4 couleur fond blanc</li>
                         </ul>
                     </div>
                 </div>
