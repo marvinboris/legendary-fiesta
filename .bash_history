@@ -592,27 +592,3 @@ nano .profile
 node -v
 #1561461789
 ./node-v10.16.0-linux-x64/bin/node 
-#1561465930
-clear
-#1561465937
-ls
-#1561465960
-nano .env
-#1561465976
-clear ls -a
-#1561465983
-clear & ls -a
-#1561466003
-nano .env.alt
-#1561466024
-rm .env.alt
-#1561466032
-mv .env .env.alt
-#1561466040
-mv .env.production .env
-#1561466046
-clear & ls -a
-#1561466054
-nano .env
-#1561466069
-clear

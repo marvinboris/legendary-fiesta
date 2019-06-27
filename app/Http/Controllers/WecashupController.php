@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Wecashup;
 use Illuminate\Support\Facades\Session;
+use App\Mail\WecashupShipped;
 
 class WecashupController extends Controller
 {
@@ -266,5 +267,21 @@ class WecashupController extends Controller
         If you are here it means that you are done with the WeCashUp's integration, we wish you to make lot of money and become billionaire.
         If so ma broda ma sista, please don't forget to buy me a beer *_*.
         */
+    }
+
+    /**
+     * Ship the given order.
+     *
+     * @param  Request  $request
+     * @param  int  $orderId
+     * @return Response
+     */
+    public function ship(Request $request, $id)
+    {
+        $wecashup = Wecashup::findOrFail($id);
+
+        // Ship WeCashUp transaction...
+
+        Mail::to($request->user())->send(new WecashupShipped($wecashup));
     }
 }
