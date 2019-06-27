@@ -2,7 +2,7 @@
     <div class="container d-flex justify-content-between">
         <div class="text-left d-flex justify-content-start align-items-center">
             {{-- Bienvenue à l'<span class="text-primary mr-1">Auto-école Université</span> --}}
-            <div class="d-flex align-items-center px-2 py-1"><i class="fa mr-1 fa-phone"></i>(+237) 654-399-487</div>
+            <div class="d-flex align-items-center px-2 py-1"><i class="fa mr-1 fa-phone"></i>(+237) 655-88-84-68 | 693-50-97-56</div>
             <div class="d-flex align-items-center px-2 py-1"><a href="mailto:contact@autoecoleuniversite.com" class="text-light"><i class="fa mr-1 fa-envelope"></i>contact@autoecoleuniversite.com</a></div>
             <div class="d-flex align-items-center px-2 py-1"><a class="text-light" href="#"><i class="fa fa-facebook"></i></a></div>
             <div class="d-flex align-items-center px-2 py-1"><a class="text-light" href="#"><i class="fa fa-twitter"></i></a></div>

@@ -468,3 +468,127 @@ ls
 cd www
 #1561389677
 ls
+#1561389732
+clear
+#1561389734
+ls
+#1561389737
+cd www
+#1561389739
+ls
+#1561389750
+rm -rf wp-*
+#1561389759
+ls
+#1561389830
+cd
+#1561389833
+git add .
+#1561389849
+git commit -m "First sent"
+#1561390042
+ls
+#1561457488
+clear
+#1561457489
+ls
+#1561457499
+clear & ls -a
+#1561457520
+nano .env
+#1561457542
+mv .env .env.alt
+#1561457545
+ls -a
+#1561457557
+mv .env.production .env
+#1561457570
+clear & php artisan migrate
+#1561457591
+history
+#1561457619
+php artisan route:clear & php artisan view:clear & php artisan config:cache
+#1561457623
+clear
+#1561457790
+ls
+#1561458958
+clear
+#1561458961
+npm
+#1561459054
+nano .env
+#1561459208
+wget http://nodejs.org/dist/v0.8.2/node-v0.8.2.tar.gz
+#1561459333
+clear
+#1561459340
+wget http://nodejs.org/dist/v0.8.2/node-v0.8.2.tar.gz
+#1561459425
+apt install nodejs
+#1561459438
+sudo apt install nodejs
+#1561459562
+wget https://nodejs.org/dist/v12.4.0/node-v12.4.0.tar.gz
+#1561459753
+wget https://nodejs.org/dist/v12.4.0/node-v12.4.0-linux-x64.tar.xz
+#1561459881
+wget https://nodejs.org/dist/v10.16.0/node-v10.16.0.tar.gz
+#1561459914
+clear
+#1561459921
+wget https://nodejs.org/dist/v10.16.0/node-v10.16.0.tar.gz
+#1561459926
+clear
+#1561460279
+wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-arm64.tar.xz
+#1561460389
+wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz
+#1561461103
+clear & ls
+#1561461121
+tar -xvf node-v10.16.0-linux-x64.tar.xz 
+#1561461170
+clear & ls
+#1561461182
+cd node-v10.16.0-linux-x64
+#1561461185
+ls
+#1561461192
+cd bin/
+#1561461195
+ls
+#1561461206
+cd
+#1561461229
+./node-v10.16.0-linux-x64/bin/npm run production
+#1561461269
+cd /usr/local
+#1561461343
+clear & apt
+#1561461435
+cd
+#1561461485
+mv node-v10.16.0-linux-x64 /usr/local/bin/nodejs
+#1561461511
+cp node-v10.16.0-linux-x64 /usr/local/bin/
+#1561461531
+cp -r node-v10.16.0-linux-x64 /usr/local/bin/
+#1561461553
+nano .profile
+#1561461560
+clear
+#1561461563
+ls -&
+#1561461571
+clear & ls -a
+#1561461612
+nano .profile
+#1561461696
+pwd
+#1561461704
+nano .profile
+#1561461756
+node -v
+#1561461789
+./node-v10.16.0-linux-x64/bin/node 

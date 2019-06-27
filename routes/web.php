@@ -123,4 +123,7 @@ Route::middleware('auth')->group(function () {
     Route::name('trainings.mine.index')->get('/trainings/mine', 'TrainingsController@mine');
     Route::name('trainings.show')->get('/trainings/{training}', 'TrainingsController@show');
     Route::name('trainings.index')->get('/trainings', 'TrainingsController@index');
+
+    Route::name('wecashup.payment')->post('/wecashup/payment', 'WecashupController@payment');
+    Route::name('wecashup.webhook')->post('/wecashup/webhook', 'WecashupController@webhook');
 });
