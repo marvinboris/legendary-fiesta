@@ -104,10 +104,10 @@
                     <div class="col-lg-6 mb-3">
                         <h4 class="text-uppercase">Informations de contact</h4>
                         <ul class="fa-ul lead">
-                            <li><i class="fa fa-li fa-phone"></i>(+237) 655-888-468</li>
+                            <li><i class="fa fa-li fa-phone"></i>(+237) 655-88-84-68 | 693-50-97-56/li>
                             <li><i class="fa fa-li fa-map-marker"></i>1135, Rue Mandessi Bell | Bali, Carrefour Kayo</li>
                             <li><i class="fa fa-li fa-clock-o"></i>Lundi - Vendredi : 8h - 18h | Samedi : 8h - 13h | Dimanche : Cas spécial</li>
-                            <li><i class="fa fa-li fa-envelope"></i>info@autoecoleuniversite.com</li>
+                            <li><i class="fa fa-li fa-envelope"></i>autoecoleuniversites@gmail.com</li>
                         </ul>
                     </div>
                     <div class="col-lg-6 mb-3 partners">

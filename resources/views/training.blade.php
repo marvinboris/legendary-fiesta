@@ -249,5 +249,37 @@
                 </div>
             </div>
         </div>
+        <div class="col-12 p-0 bg-white text-dark">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="text-uppercase text-center">PAIEMENT PAR CRYPTOMONNAIE OU LIMO</h1>
+                        <p class="lead">
+                            <u>Avantages :</u> Recevez des bonus chaque mois dans votre compte <a href="https://www.liyeplimal.net">Liyeplimal</a>.
+                        </p>
+                        <ul class="fa-ul lead">
+                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale
+                                <ul class="font-weight-light">
+                                    <li>Coût : 150 000 FCFA</li>
+                                    <li>Bonus : 7 200 FCFA chaque mois pendant 1 an.</li>
+                                </ul>
+                            </li>
+                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation accélérée
+                                <ul class="font-weight-light">
+                                    <li>Coût : 250 000 FCFA</li>
+                                    <li>Bonus : 15 300 FCFA chaque mois pendant 1 an.</li>
+                                </ul>
+                            </li>
+                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation pro + Dossier d'examen
+                                <ul class="font-weight-light">
+                                    <li>Coût : 290 000 FCFA</li>
+                                    <li>Bonus : 15 300 FCFA chaque mois pendant 1 an.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
