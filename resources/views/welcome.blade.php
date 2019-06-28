@@ -5,6 +5,21 @@
 @endsection
 
 @section('content')
+    @if (Session::has('sent_mail'))
+        <div class="alert alert-info position-fixed alert-dismissible fade show" style="top: 110px; width: calc(100% - 10px); left: 5px; z-index: 10000;">
+            {{ session('sent_mail') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <script>
+            window.onload = function () {
+                $(function () {
+                    $('div.alert').delay(5000).remove();
+                });
+            };
+        </script>
+    @endif
     <div class="row m-0 home-page">
         <div class="col-12 p-0">
             <div id="carousel-home-page" class="carousel slide carousel-fade" data-ride="carousel">
