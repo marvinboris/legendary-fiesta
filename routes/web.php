@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactShipped;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,19 @@ Route::get('/training', function () {
 Route::get('/news', function () {
     return view('news');
 })->name('news');
+
+Route::middleware('guest')->post('/contact', function (Request $request) {
+    $validatedInput = $request->validate([
+        'name' => 'required',
+        'email' => 'required:email',
+        'message' => 'required'
+    ]);
+    foreach ($validatedInput as $key => $value) {
+        $validatedInput[$key] = htmlspecialchars($value);
+    }
+    Mail::to('autoecoleuniversites@gmail.com')->send(new ContactShipped($validatedInput));
+    return redirect(url('/'));
+})->name('contact');
 
 Route::middleware('auth')->group(function () {
     Route::get('/course', function () {

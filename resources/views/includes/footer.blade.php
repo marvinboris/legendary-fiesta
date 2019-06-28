@@ -86,7 +86,8 @@
                 <div class="row">
                     <div class="col-lg-6 mb-3">
                         <h4 class="text-uppercase">Nous contacter</h4>
-                        <form action="" method="POST">
+                        <form action="{{ route('contact') }}" method="POST">
+                            @csrf
                             <div class="form-group">
                                 <input type="text" name="name" id="name" class="form-control" placeholder="Nom" required />
                             </div>

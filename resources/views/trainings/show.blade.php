@@ -28,7 +28,9 @@
                     <li><i class="fa fa-li fa-clock-o"></i><strong><u>Condition :</u></strong> {{ $training->category->condition }}.</li>
                     <li><i class="fa fa-li fa-money"></i><strong><u>Coût :</u></strong> {{ $training->cost }} FCFA.</li>
                     <li><i class="fa fa-li fa-calendar"></i><strong><u>Durée :</u></strong> {{ $training->duration%30 === 0 ? $training->duration/30 . ' mois' : $training->duration . ' jours' }}.</li>
+                    @if ($training->theory > 0)
                     <li><i class="fa fa-li fa-calendar-o"></i><strong><u>Durée d'une séance de cours théorique :</u></strong> {{ $training->theory/60 }}h.</li>
+                    @endif
                     <li><i class="fa fa-li fa-calendar-times-o"></i><strong><u>Durée d'une séance de cours pratique :</u></strong> {{ $training->practice }}min.</li>
                 </ul>
                 <p>Souscrire à cette formation vous donne un accès total à des documents quelque soit votre localisation et à n'importe quelle heure du jour ou de la nuit.</p>

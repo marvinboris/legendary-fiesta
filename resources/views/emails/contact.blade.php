@@ -11,14 +11,16 @@
                 <img src="https://autoecoleuniversite.com/images/LOGO AUTO ECOLE UNIVERSITE.png" id="logo" alt="Logo de l'auto-école">
             </div>
         </div>
-        <div class="col-12 bg-primary text-white py-3">
-            <h4 class="text-center">Informations sur la transaction</h4>
-            <p>Les informations sont donc les suivantes :</p>
+        <div class="col-12 bg-primary py-3 text-white">
+            <h4 class="text-center">Contact</h4>
+            <h6 class="text-center">Un nouveau message de visiteur</h6>
+            <p>
+                Les informations sont les suivantes :
+            </p>
             <ul class="list-unstyled">
-                <li><strong><u>Détails :</u></strong> {{ $transaction->transaction_details }}</li>
-                <li><strong><u>Montant :</u></strong> {{ $transaction->transaction_amount }} ({{ $transaction->transaction_receiver_currency }})</li>
-                <li><strong><u>Statut :</u></strong> {{ $transaction->transaction_status }}</li>
-                <li><strong><u>Type :</u></strong> {{ $transaction->transaction_type }}</li>
+                <li><strong><u>Nom :</u></strong> {{ $name }}</li>
+                <li><strong><u>Adresse mail :</u></strong> {{ $email }}</li>
+                <li><strong><u>Message :</u></strong> {{ $message }}</li>
             </ul>
         </div>
         <div class="text-light text-center bg-dark">
