@@ -42,11 +42,10 @@ Route::post('/contact', function (Request $request) {
         'email' => 'required:email',
         'message' => 'required'
     ]);
-    $input = array();
-    foreach ($request->all() as $key => $value) {
-        $input[$key] = htmlspecialchars($value);
+    foreach ($validatedInput as $key => $value) {
+        $validatedInput[$key] = htmlspecialchars($value);
     }
-    Mail::to('autoecoleuniversites@gmail.com')->send(new ContactShipped($input));
+    Mail::to('autoecoleuniversites@gmail.com')->send(new ContactShipped($validatedInput));
     return redirect(url('/'));
 })->name('contact');
 

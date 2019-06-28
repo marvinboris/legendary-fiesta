@@ -31,11 +31,10 @@ class ContactShipped extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contact')
-                    ->with([
-                        'name' => $this->contact['name'],
-                        'email' => $this->contact['email'],
-                        'message' => $this->contact['message'],
-                    ]);
+        $name = $this->contact['name'];
+        $email = $this->contact['email'];
+        $message = $this->contact['message'];
+
+        return $this->view('emails.contact', compact('name', 'email', 'message'));
     }
 }
