@@ -43,7 +43,7 @@ Route::post('/contact', function (Request $request) {
         'message' => 'required'
     ]);
     $input = array();
-    foreach ($validatedInput as $key => $value) {
+    foreach ($request->all() as $key => $value) {
         $input[$key] = htmlspecialchars($value);
     }
     Mail::to('autoecoleuniversites@gmail.com')->send(new ContactShipped($input));
