@@ -36,16 +36,17 @@ Route::get('/news', function () {
     return view('news');
 })->name('news');
 
-Route::middleware('guest')->post('/contact', function (Request $request) {
+Route::post('/contact', function (Request $request) {
     $validatedInput = $request->validate([
         'name' => 'required',
         'email' => 'required:email',
         'message' => 'required'
     ]);
+    $input = array();
     foreach ($validatedInput as $key => $value) {
-        $validatedInput[$key] = htmlspecialchars($value);
+        $input[$key] = htmlspecialchars($value);
     }
-    Mail::to('autoecoleuniversites@gmail.com')->send(new ContactShipped($validatedInput));
+    Mail::to('autoecoleuniversites@gmail.com')->send(new ContactShipped($input));
     return redirect(url('/'));
 })->name('contact');
 
