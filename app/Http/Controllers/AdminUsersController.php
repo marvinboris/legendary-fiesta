@@ -7,6 +7,7 @@ use App\User;
 use App\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use App\Category;
 
 class AdminUsersController extends Controller
 {
@@ -31,7 +32,8 @@ class AdminUsersController extends Controller
     {
         //
         $roles = Role::all();
-        return view('admin.users.create', compact('roles'));
+        $categories = Category::all();
+        return view('admin.users.create', compact('roles', 'categories'));
     }
 
     /**
@@ -43,12 +45,13 @@ class AdminUsersController extends Controller
     public function store(Request $request)
     {
         //
-        $input = $request->all();
+        $input = $request->except('trainings');
         foreach ($input as $key => $value) {
             $input[$key] = htmlspecialchars($value);
         }
         $input['password'] = Hash::make($input['password']);
         $user = User::create($input);
+        $user->trainings()->sync($request->trainings);
         Session::flash('created_user', 'L\'utilisateur ' . $user->name . ' a été ajouté.');
         return redirect(route('admin.users.index'));
     }
@@ -75,7 +78,12 @@ class AdminUsersController extends Controller
         //
         $user = User::findOrFail($id);
         $roles = Role::all();
-        return view('admin.users.edit', compact('user', 'roles'));
+        $categories = Category::all();
+        $user_trainings = array();
+        foreach ($user->trainings as $training) {
+            $user_trainings[] = $training->id;
+        }
+        return view('admin.users.edit', compact('user', 'roles', 'categories', 'user_trainings'));
     }
 
     /**
@@ -89,12 +97,13 @@ class AdminUsersController extends Controller
     {
         //
         $user = User::findOrFail($id);
-        $input = $request->except('password');
+        $input = $request->except(['password', 'trainings']);
         foreach ($input as $key => $value) {
             $input[$key] = htmlspecialchars($value);
         }
         if ($request->password) $input['password'] = Hash::make($request->password);
         $user->update($input);
+        $user->trainings()->sync($request->trainings);
         Session::flash('updated_user', 'L\'utilisateur ' . $user->name . ' a été modifié.');
         return redirect(route('admin.users.index'));
     }

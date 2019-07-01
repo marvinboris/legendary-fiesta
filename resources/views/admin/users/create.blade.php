@@ -38,6 +38,24 @@
             <label for="password" class="control-label">Mot de passe</label>
             <input type="password" name="password" id="password" class="form-control" required>
         </div>
+        <div class="form-group">
+            <label for="categories" class="control-label">Catégories</label>
+            <div class="row">
+                @foreach ($categories as $category)
+                <div class="col-12">
+                    <label for="category-{{ $category->id }}" class="control-label border-bottom">{{ $category->name }}</label>
+                    <div class="row m-0">
+                        @foreach ($category->trainings as $training)
+                            <div class="col-6 col-md-4 col-lg-3 custom-control custom-checkbox">
+                                <input type="checkbox" name="trainings[]" class="custom-control-input" id="training-{{ $training->id }}" value="{{ $training->id }}">
+                                <label for="training-{{ $training->id }}" class="custom-control-label">{{ $training->name }}</label>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
         <div class="form-group"><button class="btn btn-primary">Ajouter</button></div>
     </form>
 @endsection
