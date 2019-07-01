@@ -106,7 +106,7 @@
                                 <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Permis international : 150 000 FCFA</li>
                                 <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Conversion permis : 150 000 FCFA</li>
                                 <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Extension (C, D, E, G) : 100 000 FCFA</li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-calendar"></i>Période de formation : 9h - 12h | 12h - 14h | 14h - 16h | 16h - 18h | 18h - 20h</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-calendar"></i>Période de formation : 9h - 12h | 12h - 14h | 16h - 18h | 18h - 20h</li>
                             </ul>
                         </div>
                     </div>
