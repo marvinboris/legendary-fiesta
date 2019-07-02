@@ -89,7 +89,7 @@
                         Non disponible pour le moment.
                     </div>
                     <div class="mobile_money-case d-none">
-                        <button type="button" id="MyWCUpaymentButton" class="btn btn-primary-purple">
+                        <button type="button" id="MyWCUpaymentButton" class="btn btn-primary bg-primary-purple">
                             Procéder au paiement
                         </button>
                     </div>
