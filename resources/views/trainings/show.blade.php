@@ -89,6 +89,7 @@
                         Non disponible pour le moment.
                     </div>
                     <div class="mobile_money-case d-none">
+                        @include('includes.wecashup-pay-now')
                     </div>
                     <div class="cash-case d-none">
                         Veuillez vous rendre au siège de l'auto-école Université à Bali, Carrefour Kayo Eli.<br>Vous pouvez appeler le numéro suivant : <strong>(+237) 655-88-84-68</strong>
@@ -106,11 +107,11 @@
 @endsection
 
 @section('scripts')
-    @include('includes.wecashup-pay-now')
+    {{-- @include('includes.wecashup-pay-now') --}}
     <script>
         const duration = 250;
         window.onload = function () {
-            $('script.wecashup_button, #WCUpaymentButton').detach().prependTo('div.mobile_money-case')
+            // $('script.wecashup_button, #WCUpaymentButton').detach().prependTo('div.mobile_money-case')
             $('.second-page').fadeOut();
             $('.custom-control-input').click(function () {
                 $('.custom-control-input').removeClass('checked');
