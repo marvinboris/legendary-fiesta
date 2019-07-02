@@ -89,10 +89,6 @@
                         Non disponible pour le moment.
                     </div>
                     <div class="mobile_money-case d-none">
-                        <form action="https://autoecoleuniversite.com/wecashup/payment" method="POST" id="wecashup">
-                            {{-- @csrf --}}
-                            <input type="hidden" name="training_id" value="{{ $training->id }}">
-                        </form>
                     </div>
                     <div class="cash-case d-none">
                         Veuillez vous rendre au siège de l'auto-école Université à Bali, Carrefour Kayo Eli.<br>Vous pouvez appeler le numéro suivant : <strong>(+237) 655-88-84-68</strong>
@@ -114,6 +110,7 @@
     <script>
         const duration = 250;
         window.onload = function () {
+            $('#WCUpaymentButton').detach().prependTo('div.mobile_money-case')
             $('.second-page').fadeOut();
             $('.custom-control-input').click(function () {
                 $('.custom-control-input').removeClass('checked');
