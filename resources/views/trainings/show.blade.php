@@ -114,10 +114,10 @@
         const duration = 250;
         window.onload = function () {
             // $('#WCUpaymentButton').hide();
-            $('#MyWCUpaymentButton').click(function () {
-                $('#WCUpaymentButton').trigger('click');
-            });
-            $('.second-page').fadeOut();
+            // $('#MyWCUpaymentButton').click(function () {
+            //     $('#WCUpaymentButton').trigger('click');
+            // });
+            $('.second-page').hide();
             $('.custom-control-input').click(function () {
                 $('.custom-control-input').removeClass('checked');
                 $(this).addClass('checked');
