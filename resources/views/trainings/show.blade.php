@@ -113,7 +113,7 @@
     <script>
         const duration = 250;
         window.onload = function () {
-            $('#WCUpaymentButton').hide();
+            // $('#WCUpaymentButton').hide();
             $('#MyWCUpaymentButton').click(function () {
                 $('#WCUpaymentButton').trigger('click');
             });
