@@ -89,7 +89,7 @@
                         Non disponible pour le moment.
                     </div>
                     <div class="mobile_money-case d-none">
-                        <button type="button" id="MyWCUpaymentButton" class="btn btn-primary bg-primary-purple">
+                        <button type="button" id="mobile_moneyButton" class="btn btn-primary bg-primary-purple">
                             Procéder au paiement
                         </button>
                     </div>
@@ -113,10 +113,10 @@
     <script>
         const duration = 250;
         window.onload = function () {
-            // $('#WCUpaymentButton').hide();
-            // $('#MyWCUpaymentButton').click(function () {
-            //     $('#WCUpaymentButton').trigger('click');
-            // });
+            $('#WCUpaymentButton').hide();
+            $('#mobile_moneyButton').click(function () {
+                $('#WCUpaymentButton').trigger('click');
+            });
             $('.second-page').hide();
             $('.custom-control-input').click(function () {
                 $('.custom-control-input').removeClass('checked');

@@ -20,6 +20,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-        '/wecashup/webhook', '/wecashup/payment'
+        '/wecashup/webhook', '/wecashup/payment', '/trainings/*'
     ];
 }
