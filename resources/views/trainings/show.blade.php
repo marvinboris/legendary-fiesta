@@ -110,7 +110,7 @@
     <script>
         const duration = 250;
         window.onload = function () {
-            $('#WCUpaymentButton').detach().prependTo('div.mobile_money-case')
+            $('script.wecashup_button, #WCUpaymentButton').detach().prependTo('div.mobile_money-case')
             $('.second-page').fadeOut();
             $('.custom-control-input').click(function () {
                 $('.custom-control-input').removeClass('checked');
