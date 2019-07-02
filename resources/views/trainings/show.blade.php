@@ -89,7 +89,9 @@
                         Non disponible pour le moment.
                     </div>
                     <div class="mobile_money-case d-none">
-                        @include('includes.wecashup-pay-now')
+                        <button type="button" id="MyWCUpaymentButton" class="btn btn-primary-purple">
+                            Procéder au paiement
+                        </button>
                     </div>
                     <div class="cash-case d-none">
                         Veuillez vous rendre au siège de l'auto-école Université à Bali, Carrefour Kayo Eli.<br>Vous pouvez appeler le numéro suivant : <strong>(+237) 655-88-84-68</strong>
@@ -107,11 +109,14 @@
 @endsection
 
 @section('scripts')
-    {{-- @include('includes.wecashup-pay-now') --}}
+    @include('includes.wecashup-pay-now')
     <script>
         const duration = 250;
         window.onload = function () {
-            // $('script.wecashup_button, #WCUpaymentButton').detach().prependTo('div.mobile_money-case')
+            $('#WCUpaymentButton').hide();
+            $('#MyWCUpaymentButton').click(function () {
+                $('#WCUpaymentButton').trigger('click');
+            });
             $('.second-page').fadeOut();
             $('.custom-control-input').click(function () {
                 $('.custom-control-input').removeClass('checked');
@@ -123,6 +128,7 @@
                         const value = $('.custom-control-input.checked').val();
                         $('.modal-title').delay(duration).text('Passez à la caisse');
                         $('#previous').removeClass('d-none');
+                        $('#next').addClass('d-none');
                         $('.first-page').addClass('d-none').fadeOut(duration);
                         $('.second-page').removeClass('d-none').fadeIn(duration).children('.' + value + '-case').removeClass('d-none').fadeIn(duration);
                     }
@@ -132,6 +138,7 @@
                 if ($('.first-page').hasClass('d-none') && !$('.second-page').hasClass('d-none')) {
                     $('.modal-title').delay(duration).text('Sélectionnez une méthode de paiement');
                     $('#previous').addClass('d-none');
+                    $('#next').removeClass('d-none');
                     $('.second-page').fadeOut(duration).addClass('d-none').children().addClass('d-none');
                     $('.first-page').removeClass('d-none').fadeIn(duration);
                 }
