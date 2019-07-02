@@ -5,8 +5,8 @@
             <div class="d-flex align-items-center px-2 py-1"><i class="fa mr-1 fa-phone"></i>(+237) 655-88-84-68 | 693-50-97-56</div>
             <div class="d-flex align-items-center px-2 py-1"><a href="mailto:autoecoleuniversites@gmail.com" class="text-light"><i class="fa mr-1 fa-envelope"></i>autoecoleuniversites@gmail.com</a></div>
             <div class="d-flex align-items-center px-2 py-1"><a class="text-light" href="#"><i class="fa fa-facebook"></i></a></div>
-            <div class="d-flex align-items-center px-2 py-1"><a class="text-light" href="#"><i class="fa fa-twitter"></i></a></div>
-            <div class="d-flex align-items-center px-2 py-1"><a class="text-light" href="#"><i class="fa fa-google-plus"></i></a></div>
+            {{-- <div class="d-flex align-items-center px-2 py-1"><a class="text-light" href="#"><i class="fa fa-twitter"></i></a></div>
+            <div class="d-flex align-items-center px-2 py-1"><a class="text-light" href="#"><i class="fa fa-google-plus"></i></a></div> --}}
         </div>
         <div class="text-right d-flex justify-content-end">
         </div>

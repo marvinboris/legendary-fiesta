@@ -107,7 +107,7 @@
                         <ul class="fa-ul lead">
                             <li><i class="fa fa-li fa-phone"></i>(+237) 655-88-84-68 | 693-50-97-56</li>
                             <li><i class="fa fa-li fa-map-marker"></i>1135, Rue Mandessi Bell | Bali, Carrefour Kayo</li>
-                            <li><i class="fa fa-li fa-clock-o"></i>Lundi - Vendredi : 8h - 18h | Samedi : 8h - 13h | Dimanche : Cas spécial</li>
+                            <li><i class="fa fa-li fa-clock-o"></i>Lundi - Vendredi : 8h - 20h | Samedi : 8h - 14h | Dimanche : Cas spécial</li>
                             <li><i class="fa fa-li fa-envelope"></i>autoecoleuniversites@gmail.com</li>
                         </ul>
                     </div>
@@ -136,12 +136,12 @@
             Copyright &copy; {{ Carbon\Carbon::now()->year }} | Designed by <a href="mailto:jaris.ultio.21@gmail.com">Brainer 21</a>.
         </div>
         <div class="text-center col-12">
-            <a href="#" class="fa-stack fa-lg">
+            <a href="" class="fa-stack fa-lg">
                 <i class="fa fa-circle text-primary fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x text-light"></i>
             </a>
 
-            <a href="#" class="fa-stack fa-lg">
+            {{-- <a href="#" class="fa-stack fa-lg">
                 <i class="fa fa-circle text-primary fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x text-light"></i>
             </a>
@@ -149,7 +149,7 @@
             <a href="#" class="fa-stack fa-lg">
                 <i class="fa fa-circle text-primary fa-stack-2x"></i>
                 <i class="fa fa-google-plus fa-stack-1x text-light"></i>
-            </a>
+            </a> --}}
         </div>
     </div>
 </footer>
