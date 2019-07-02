@@ -592,3 +592,389 @@ nano .profile
 node -v
 #1561461789
 ./node-v10.16.0-linux-x64/bin/node 
+#1561634895
+clear
+#1561634908
+ls
+#1561634914
+git log
+#1561634942
+clear & git checkout master
+#1561634958
+clear
+#1561634964
+git checkout master
+#1561635032
+git commit -m "On remote before loading first remote master commit"
+#1561635044
+git checkout master
+#1561635051
+git log
+#1561635055
+clear
+#1561635061
+git branch
+#1561635067
+git branch master
+#1561635073
+git checkout master
+#1561635098
+ls -a
+#1561635106
+clear ls -a
+#1561635115
+clear & ls -a
+#1561635134
+nano .gitignore 
+#1561635178
+git checkout master
+#1561635240
+pwd
+#1561635246
+clear
+#1561635252
+ls
+#1561635263
+ls -a
+#1561635340
+git checkout master
+#1561635481
+clear
+#1561635484
+git show
+#1561635496
+claer
+#1561635499
+clear
+#1561635547
+git checkout master
+#1561635720
+git stash save .bash_history
+#1561635730
+git checkout master
+#1561635738
+git brancg
+#1561635746
+git branch
+#1561635781
+git log
+#1561635810
+clear
+#1561635829
+git log
+#1561635850
+clear 
+#1561635857
+git checkout 328a6baf9aa252c866e333247a5891663e1801b6
+#1561635865
+clear
+#1561638435
+clear
+#1561638470
+ls
+#1561638477
+cd app
+#1561638477
+ls
+#1561638487
+cd Mail
+#1561638490
+ls
+#1561638492
+clear
+#1561638493
+ls
+#1561638517
+clear
+#1561638605
+cd
+#1561638612
+git log
+#1561638644
+clear
+#1561638656
+git branch
+#1561638664
+git log
+#1561638693
+clear
+#1561638709
+git branch
+#1561638716
+git checkout master
+#1561638731
+git log
+#1561638744
+clear
+#1561638752
+git checkout b3543ba4bab835d9389a875f087bff2634062074
+#1561641725
+git log
+#1561641742
+git branch
+#1561641752
+git checkout master
+#1561641768
+gclear
+#1561641774
+clear
+#1561641791
+git checkout master
+#1561641802
+git log
+#1561641813
+clear
+#1561641827
+git log
+#1561641838
+clear
+#1561641848
+git checkout 4764832a2bb9f11c2b84f0238649e936c1286228
+#1561642270
+php artisan tinker 
+#1561642835
+clear
+#1561642840
+php artisan tinker
+#1561644725
+clear
+#1561644761
+php artisan tinker
+#1561645054
+clear
+#1561645063
+php artisan
+#1561647822
+git branch
+#1561647828
+git checkout master
+#1561647834
+git log
+#1561647850
+git checkout b3abe3298a0a5c752407380308a12711b53679a4
+#1561648486
+clear
+#1561648495
+git branch
+#1561648509
+git checkout master
+#1561648514
+git log
+#1561648542
+clear
+#1561648616
+git checkout 8ff2caa8e7101b64e294dfcfc4f0ad4b3c247185
+#1561690405
+clear
+#1561690414
+nano .env
+#1561715023
+clear
+#1561715028
+git log
+#1561715033
+clear
+#1561715037
+git branch
+#1561715043
+git checkout master
+#1561715048
+clear & git log
+#1561715058
+clear
+#1561715064
+git checkout e19d63387b41311c72e1f0eeece991f9a998d9cf
+#1561715066
+clear
+#1561715078
+git branch
+#1561719622
+git checkout master
+#1561719628
+git log
+#1561719639
+clear
+#1561719641
+git log
+#1561719646
+clear
+#1561719651
+git branch
+#1561719707
+git log
+#1561719720
+clear
+#1561719728
+git checkout e19d63387b41311c72e1f0eeece991f9a998d9cf
+#1561719732
+git branch
+#1561719774
+clear
+#1561719777
+git branch
+#1561719781
+git checkout master
+#1561719783
+clear
+#1561719785
+git log
+#1561719795
+clear
+#1561719804
+git checkout fddfea6c473396add8a8d9583980759eb5cfe36e
+#1561721579
+clear
+#1561721589
+./composer.phar update
+#1561721671
+clear & git branch
+#1561721681
+git checkout master
+#1561721700
+git log
+#1561721712
+clear
+#1561721719
+git checkout 18d47abda4079ae7c2b632729538ce91d5b6f8c3
+#1561721729
+clear
+#1561721736
+./composer.phar update
+#1561721750
+clear
+#1561721972
+clear
+#1561721978
+git branch
+#1561721985
+git checkout master
+#1561721990
+git log
+#1561722004
+git checkout 8382b68dc0a5777b0d83517b91a77ae1b48447ca
+#1561722007
+clear
+#1561722296
+git checkout master
+#1561722298
+git log
+#1561722305
+clear
+#1561722310
+git checkout a78d51b006f5526b84c7d0fd1887e4c828f3e77d
+#1561722312
+clear
+#1561733443
+clear
+#1561733447
+git checkout master
+#1561733451
+git log
+#1561733459
+clear
+#1561733466
+git checkout 688f45d65edc8d24ae4336241780f504fae17907
+#1561733470
+clear
+#1561733538
+./composer.phar update
+#1561733626
+clear
+#1561733632
+nano .env
+#1561733675
+php artisan config:cache
+#1561970681
+clear
+#1561970682
+git log
+#1561970689
+git branch
+#1561970695
+git checkout master
+#1561970699
+git log
+#1561970717
+git checkout 72a48a9a1557166c476a8e514495ec1b66507f56
+#1562042550
+clear
+#1562042554
+ls
+#1562042566
+git checkout Payments
+#1562042582
+npm
+#1562042964
+clear
+#1562042970
+git checkout master
+#1562042995
+git checkout Payments
+#1562043148
+clear
+#1562043159
+git checkout master
+#1562043186
+clear
+#1562043195
+git checkout Payments
+#1562043424
+clear
+#1562043433
+git checkout master
+#1562043489
+git checkout Payments
+#1562049426
+git checkout master
+#1562049435
+clear
+#1562049447
+git checkout Payments
+#1562049575
+clear
+#1562049580
+git checkout master
+#1562049604
+clear
+#1562049611
+git checkout Payments
+#1562050430
+clear
+#1562050445
+git checkout master
+#1562050474
+git checkout Payments
+#1562051440
+clear
+#1562051449
+git branch
+#1562051456
+git checkout Payments
+#1562051768
+clear
+#1562051771
+git checkout master
+#1562051802
+clear
+#1562051809
+git checkout Payments
+#1562051898
+clear
+#1562051989
+php artisan cache:clear
+#1562052004
+composer update
+#1562052013
+./composer.phar update
+#1562052081
+php artisan cache:clear
+#1562052092
+php artisan optimize
+#1562052108
+php artisan route:cache
+#1562052119
+php artisan route:clear
+#1562052140
+php artisan view:clear
+#1562052152
+php artisan config:cache
