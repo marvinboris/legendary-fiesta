@@ -135,9 +135,9 @@ Route::middleware('auth')->group(function () {
         })->name('teacher.dashboard');
     });
 
-    Route::middleware('cors')->name('trainings.mine.show')->get('/trainings/mine/{training}', 'TrainingsController@showMine');
+    Route::name('trainings.mine.show')->get('/trainings/mine/{training}', 'TrainingsController@showMine');
     Route::name('trainings.mine.index')->get('/trainings/mine', 'TrainingsController@mine');
-    Route::name('trainings.show')->get('/trainings/{training}', 'TrainingsController@show');
+    Route::middleware('cors')->name('trainings.show')->get('/trainings/{training}', 'TrainingsController@show');
     Route::name('trainings.index')->get('/trainings', 'TrainingsController@index');
 
     Route::name('wecashup.payment')->post('/wecashup/payment', 'WecashupController@payment');
