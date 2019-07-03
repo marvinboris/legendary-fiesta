@@ -92,7 +92,7 @@ class MonetbilController extends Controller
                 'amount' => $request->amount ? $input['amount'] : 0,
                 'tx_id' => $input['payment_ref'],
                 'tx_hash' => $input['transaction_id'],
-                'training_id' => +$input['item_ref'],
+                'training_id' => +$request->input('item_ref'),
                 'user_id' => $user->id,
                 'vendor' => 'monetbil',
                 'method' =>  $request->operator ? $input['operator'] : 'MTN',
