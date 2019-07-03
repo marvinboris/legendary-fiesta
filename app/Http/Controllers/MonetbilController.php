@@ -87,13 +87,12 @@ class MonetbilController extends Controller
 
         $transaction = Transaction::where("tx_id", $input['payment_ref'])->first();
 
-        if ($request->has('item_ref')) return $request->item_ref;
         if (!$transaction) {
             $transaction = Transaction::create([
                 'amount' => $request->amount ? $input['amount'] : 0,
                 'tx_id' => $input['payment_ref'],
                 'tx_hash' => $input['transaction_id'],
-                'training_id' => +$request->input('item_ref'),
+                'training_id' => +$request->item_ref,
                 'user_id' => $user->id,
                 'vendor' => 'monetbil',
                 'method' =>  $request->operator ? $input['operator'] : 'MTN',
