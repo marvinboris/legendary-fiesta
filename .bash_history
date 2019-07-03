@@ -592,3 +592,29 @@ nano .profile
 node -v
 #1561461789
 ./node-v10.16.0-linux-x64/bin/node 
+#1562156532
+clear
+#1562156545
+git branch
+#1562156553
+git checkout master
+#1562156569
+nano .bash_history 
+#1562156577
+nano .gitignore 
+#1562156640
+git stash save .bash_history 
+#1562156655
+git checkout master
+#1562156663
+nano .gitignore 
+#1562156718
+git checkout Payments
+#1562156748
+git commit -m "Changed .gitignore file"
+#1562156753
+git add .
+#1562156755
+git commit -m "Changed .gitignore file"
+#1562156772
+git checkout Payments
