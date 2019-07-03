@@ -18,7 +18,7 @@ class CreateTransactionsTable extends Migration
             $table->string('address', 200)->nullable();
             $table->integer('user_id')->nullable();
             $table->decimal('amount', 18, 6);
-            $table->integer('item_ref');
+            $table->integer('training_id')->index();
             $table->string('currency')->nullable();
             $table->string('tx_id');
             $table->string('tx_hash');

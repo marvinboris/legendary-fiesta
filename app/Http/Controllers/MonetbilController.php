@@ -33,7 +33,7 @@ class MonetbilController extends Controller
 
         $json = [
             'amount' => $input['amount'],
-            'item_ref' => $input['item_ref'],
+            'item_ref' => $input['training_id'],
             'payment_ref' => time(),
             'country' => 'XAF',
             'logo' => 'https://autoecoleuniversite.com/images/LOGO%20AUTO%20ECOLE%20UNIVERSITE.png',
@@ -92,7 +92,7 @@ class MonetbilController extends Controller
                 'amount' => $request->amount ? $input['amount'] : 0,
                 'tx_id' => $input['payment_ref'],
                 'tx_hash' => $input['transaction_id'],
-                'item_ref' => +$input['item_ref'],
+                'training_id' => +$input['item_ref'],
                 'user_id' => $user->id,
                 'vendor' => 'monetbil',
                 'method' =>  $request->operator ? $input['operator'] : 'MTN',

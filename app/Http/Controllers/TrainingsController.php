@@ -45,7 +45,7 @@ class TrainingsController extends Controller
         // Handling payments
         $user = Auth::user();
 
-        $lastTransaction = Transaction::where('user_id', $user->id)->where('item_ref', $training->id)->get()->first();
+        $lastTransaction = Transaction::where('user_id', $user->id)->where('training_id', $training->id)->get()->first();
 
         if ($lastTransaction) if ($lastTransaction->status === 'completed') {
             return redirect(route('trainings.mine.show', $training->id));
@@ -53,7 +53,7 @@ class TrainingsController extends Controller
 
         $monetbil = MonetbilController::generateWidgetData([
             'amount' => $training->cost,
-            'item_ref' => $training->id
+            'training_id' => $training->id
         ]);
 
         return view('trainings.show', compact('training', 'images', 'monetbil'));
