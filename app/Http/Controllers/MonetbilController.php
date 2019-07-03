@@ -34,6 +34,7 @@ class MonetbilController extends Controller
         $json = [
             'amount' => $input['amount'],
             'item_ref' => $input['item_ref'],
+            'payment_ref' => time(),
             'country' => 'XAF',
             'logo' => 'https://autoecoleuniversite.com/images/LOGO%20AUTO%20ECOLE%20UNIVERSITE.png',
             'email' => $user->email,
@@ -72,57 +73,57 @@ class MonetbilController extends Controller
      */
     public function notify(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email', htmlspecialchars($request->email))->first();
 
         if (!$user) {
             error_log('Aucun utilisateur trouvé !');
             die('Aucun utilisateur trouvé !');
         }
 
-        $transaction = Transaction::where("tx_id", $request->payment_ref)->first();
+        $transaction = Transaction::where("tx_id", htmlspecialchars($request->payment_ref))->first();
 
         if (!$transaction) {
             $transaction = Transaction::create([
-                'amount' => $request->amount,
-                'tx_id' => $request->payment_ref,
-                'tx_hash' => 'null',
-                'item_ref' => $request->item_ref,
+                'amount' => htmlspecialchars($request->amount),
+                'tx_id' => htmlspecialchars($request->payment_ref),
+                'tx_hash' => htmlspecialchars($request->transaction_id),
+                'item_ref' => +htmlspecialchars($request->item_ref),
                 'user_id' => $user->id,
                 'vendor' => 'monetbil',
-                'method' =>  $request->operator,
+                'method' =>  htmlspecialchars($request->operator) ? htmlspecialchars($request->operator) : 'MTN',
                 'type' => 'subscription',
                 'status' => 'pending',
                 'currency' => 'CFA',
-                'address' => $request->phone
+                'address' => htmlspecialchars($request->phone)
             ]);
         }
 
-        $transaction->currency = $request->currency;
-        $transaction->tx_hash = $request->transaction_id;
+        $transaction->currency = htmlspecialchars($request->currency);
+        $transaction->tx_hash = htmlspecialchars($request->transaction_id);
         $transaction->vendor = self::$settings['vendor'];
 
-        $transaction->method = $request->operator;
-        $transaction->address = $request->phone;
-        $transaction->amount = $request->amount;
+        $transaction->method = htmlspecialchars($request->operator);
+        $transaction->address = htmlspecialchars($request->phone);
+        $transaction->amount = htmlspecialchars($request->amount);
 
-        if ('success' === $request->status) {
-            $user->trainings()->attach($request->item_ref);
+        if ('success' === htmlspecialchars($request->status)) {
+            $user->trainings()->attach(htmlspecialchars($request->item_ref));
             Session::flash('transaction_successful', 'La transaction a été effectuée avec succès.');
             $transaction->status = 'completed';
-        } else if ('cancelled' === $request->status) {
+        } else if ('cancelled' === htmlspecialchars($request->status)) {
             Session::flash('transaction_cancelled', 'La transaction a été annulée.');
-            $transaction->status = $request->status;
-        } else if ('failed' === $request->status) {
+            $transaction->status = htmlspecialchars($request->status);
+        } else if ('failed' === htmlspecialchars($request->status)) {
             Session::flash('transaction_failed', 'La transaction a échoué.');
-            $transaction->status = $request->status;
+            $transaction->status = htmlspecialchars($request->status);
         }
 
         $transaction->save();
 
         // Notify the user through an email
-        Mail::to($request->email)->send(new TransactionShipped($transaction));
+        Mail::to(htmlspecialchars($request->email))->send(new TransactionShipped($transaction));
 
-        if ('success' === $request->status) return redirect(route('trainings.mine.show', $request->item_ref));
-        return redirect(route('trainings.show', $request->item_ref));
+        if ('success' === htmlspecialchars($request->status)) return redirect(route('trainings.mine.show', htmlspecialchars($request->item_ref)));
+        return redirect(route('trainings.show', htmlspecialchars($request->item_ref)));
     }
 }
