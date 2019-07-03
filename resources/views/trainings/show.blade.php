@@ -1,6 +1,21 @@
 @extends('layouts.auth')
 
 @section('content')
+    @if (Session::has('transaction_successful'))
+        <div class="alert alert-success">
+            {{ session('transaction_successful') }}
+        </div>
+    @endif
+    @if (Session::has('transaction_cancelled'))
+        <div class="alert alert-danger">
+            {{ session('transaction_cancelled') }}
+        </div>
+    @endif
+    @if (Session::has('transaction_failed'))
+        <div class="alert alert-danger">
+            {{ session('transaction_failed') }}
+        </div>
+    @endif
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
@@ -89,9 +104,9 @@
                         Non disponible pour le moment.
                     </div>
                     <div class="mobile_money-case d-none">
-                        <button type="button" id="mobile_moneyButton" class="btn btn-primary bg-primary-purple">
+                        <a href="{{ $monetbil['link'] }}" target="_blank" class="btn btn-block btn-primary bg-primary-purple">
                             Procéder au paiement
-                        </button>
+                        </a>
                     </div>
                     <div class="cash-case d-none">
                         Veuillez vous rendre au siège de l'auto-école Université à Bali, Carrefour Kayo Eli.<br>Vous pouvez appeler le numéro suivant : <strong>(+237) 655-88-84-68</strong>
@@ -109,7 +124,7 @@
 @endsection
 
 @section('scripts')
-    @include('includes.wecashup-pay-now')
+    <script type="text/javascript" src="https://fr.monetbil.com/widget/v2/monetbil.min.js"></script>
     <script>
         const duration = 250;
         window.onload = function () {

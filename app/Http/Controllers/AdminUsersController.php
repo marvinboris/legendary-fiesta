@@ -8,6 +8,8 @@ use App\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Category;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TrainingShipped;
 
 class AdminUsersController extends Controller
 {
@@ -52,6 +54,7 @@ class AdminUsersController extends Controller
         $input['password'] = Hash::make($input['password']);
         $user = User::create($input);
         $user->trainings()->sync($request->trainings);
+        if (count($request->trainings) > 0) Mail::to($user->email)->send(new TrainingShipped($request->trainings));
         Session::flash('created_user', 'L\'utilisateur ' . $user->name . ' a été ajouté.');
         return redirect(route('admin.users.index'));
     }
@@ -104,6 +107,7 @@ class AdminUsersController extends Controller
         if ($request->password) $input['password'] = Hash::make($request->password);
         $user->update($input);
         $user->trainings()->sync($request->trainings);
+        if (count($request->trainings) !== count($user->trainings)) Mail::to($user->email)->send(new TrainingShipped($request->trainings));
         Session::flash('updated_user', 'L\'utilisateur ' . $user->name . ' a été modifié.');
         return redirect(route('admin.users.index'));
     }

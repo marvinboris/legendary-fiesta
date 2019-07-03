@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Training;
 use Illuminate\Support\Facades\Auth;
+use App\Transaction;
 
 class TrainingsController extends Controller
 {
@@ -40,7 +41,22 @@ class TrainingsController extends Controller
             'Permis E' => 'poids-lourd.png',
             'Permis G' => 'tractor-002.png',
         ];
-        return view('trainings.show', compact('training','images'));
+
+        // Handling payments
+        $user = Auth::user();
+
+        $lastTransaction = Transaction::where('user_id', $user->id)->where('item_ref', $training->id)->get()->first();
+
+        if ($lastTransaction) if ($lastTransaction->status === 'completed') {
+            return redirect(route('trainings.mine.show', $training->id));
+        }
+
+        $monetbil = MonetbilController::generateWidgetData([
+            'amount' => $training->cost,
+            'item_ref' => $training->id
+        ]);
+
+        return view('trainings.show', compact('training', 'images', 'monetbil'));
     }
 
     /**

@@ -48,4 +48,9 @@ class User extends Authenticatable
     public function trainings() {
         return $this->belongsToMany('App\Training')->withPivot('created_at', 'updated_at');
     }
+
+    public function getUserAttribute($value)
+    {
+        return ucwords(strtolower($value));
+    }
 }
