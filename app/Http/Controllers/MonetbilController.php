@@ -87,6 +87,7 @@ class MonetbilController extends Controller
 
         $transaction = Transaction::where("tx_id", $input['payment_ref'])->first();
 
+        if ($request->has('item_ref')) return $request->item_ref;
         if (!$transaction) {
             $transaction = Transaction::create([
                 'amount' => $request->amount ? $input['amount'] : 0,
