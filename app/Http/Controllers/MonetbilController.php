@@ -89,13 +89,13 @@ class MonetbilController extends Controller
 
         if (!$transaction) {
             $transaction = Transaction::create([
-                'amount' => $input['amount'] ? $input['amount'] : 0,
+                'amount' => $request->amount ? $input['amount'] : 0,
                 'tx_id' => $input['payment_ref'],
                 'tx_hash' => $input['transaction_id'],
                 'item_ref' => +$input['item_ref'],
                 'user_id' => $user->id,
                 'vendor' => 'monetbil',
-                'method' =>  $input['operator'] ? $input['operator'] : 'MTN',
+                'method' =>  $request->operator ? $input['operator'] : 'MTN',
                 'type' => 'subscription',
                 'status' => 'pending',
                 'currency' => 'CFA',
@@ -103,13 +103,13 @@ class MonetbilController extends Controller
             ]);
         }
 
-        $transaction->currency = $input['currency'];
-        $transaction->tx_hash = $input['transaction_id'];
+        if ($request->currency) $transaction->currency = $input['currency'];
+        if ($request->transaction_id) $transaction->tx_hash = $input['transaction_id'];
         $transaction->vendor = self::$settings['vendor'];
 
-        $transaction->method = $input['operator'];
-        $transaction->address = $input['phone'];
-        $transaction->amount = $input['amount'];
+        if ($request->operator) $transaction->method = $input['operator'];
+        if ($request->phone) $transaction->address = $input['phone'];
+        if ($request->amount) $transaction->amount = $input['amount'];
 
         if ('success' === $input['status']) {
             $user->trainings()->attach($input['item_ref']);
