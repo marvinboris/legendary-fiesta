@@ -8,6 +8,7 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\TransactionShipped;
+use Illuminate\Support\Facades\Session;
 
 class MonetbilController extends Controller
 {
