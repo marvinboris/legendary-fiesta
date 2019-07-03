@@ -139,6 +139,7 @@ Route::middleware('auth')->group(function () {
     Route::name('trainings.mine.index')->get('/trainings/mine', 'TrainingsController@mine');
     Route::name('trainings.show')->get('/trainings/{training}', 'TrainingsController@show');
     Route::name('trainings.index')->get('/trainings', 'TrainingsController@index');
-    
-    Route::name('monetbil.notify')->post('/monetbil/notify', 'MonetbilController@notify');
+
+    Route::name('monetbil.notify.post')->post('/monetbil/notify', 'MonetbilController@notify');
+    Route::name('monetbil.notify.get')->get('/monetbil/notify', 'MonetbilController@notify');
 });
