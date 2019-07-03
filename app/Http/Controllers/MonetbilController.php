@@ -73,58 +73,62 @@ class MonetbilController extends Controller
      */
     public function notify(Request $request)
     {
-        return $request->all();
-        $user = User::where('email', htmlspecialchars($request->email))->first();
+        $input = $request->all();
+        foreach ($input as $key => $value) {
+            $input[$key] = htmlspecialchars($value);
+        }
+
+        $user = User::where('email', $input['email'])->first();
 
         if (!$user) {
             error_log('Aucun utilisateur trouvé !');
             die('Aucun utilisateur trouvé !');
         }
 
-        $transaction = Transaction::where("tx_id", htmlspecialchars($request->payment_ref))->first();
+        $transaction = Transaction::where("tx_id", $input['payment_ref'])->first();
 
         if (!$transaction) {
             $transaction = Transaction::create([
-                'amount' => htmlspecialchars($request->amount ? $request->amount : 0),
-                'tx_id' => htmlspecialchars($request->payment_ref),
-                'tx_hash' => htmlspecialchars($request->transaction_id),
-                'item_ref' => +htmlspecialchars($request->item_ref),
+                'amount' => $input['amount'] ? $input['amount'] : 0,
+                'tx_id' => $input['payment_ref'],
+                'tx_hash' => $input['transaction_id'],
+                'item_ref' => +$input['item_ref'],
                 'user_id' => $user->id,
                 'vendor' => 'monetbil',
-                'method' =>  htmlspecialchars($request->operator) ? htmlspecialchars($request->operator) : 'MTN',
+                'method' =>  $input['operator'] ? $input['operator'] : 'MTN',
                 'type' => 'subscription',
                 'status' => 'pending',
                 'currency' => 'CFA',
-                'address' => htmlspecialchars($request->phone)
+                'address' => $input['phone']
             ]);
         }
 
-        $transaction->currency = htmlspecialchars($request->currency);
-        $transaction->tx_hash = htmlspecialchars($request->transaction_id);
+        $transaction->currency = $input['currency'];
+        $transaction->tx_hash = $input['transaction_id'];
         $transaction->vendor = self::$settings['vendor'];
 
-        $transaction->method = htmlspecialchars($request->operator);
-        $transaction->address = htmlspecialchars($request->phone);
-        $transaction->amount = htmlspecialchars($request->amount);
+        $transaction->method = $input['operator'];
+        $transaction->address = $input['phone'];
+        $transaction->amount = $input['amount'];
 
-        if ('success' === htmlspecialchars($request->status)) {
-            $user->trainings()->attach(htmlspecialchars($request->item_ref));
+        if ('success' === $input['status']) {
+            $user->trainings()->attach($input['item_ref']);
             Session::flash('transaction_successful', 'La transaction a été effectuée avec succès.');
             $transaction->status = 'completed';
-        } else if ('cancelled' === htmlspecialchars($request->status)) {
+        } else if ('cancelled' === $input['status']) {
             Session::flash('transaction_cancelled', 'La transaction a été annulée.');
-            $transaction->status = htmlspecialchars($request->status);
-        } else if ('failed' === htmlspecialchars($request->status)) {
+            $transaction->status = $input['status'];
+        } else if ('failed' === $input['status']) {
             Session::flash('transaction_failed', 'La transaction a échoué.');
-            $transaction->status = htmlspecialchars($request->status);
+            $transaction->status = $input['status'];
         }
 
         $transaction->save();
 
         // Notify the user through an email
-        Mail::to(htmlspecialchars($request->email))->send(new TransactionShipped($transaction));
+        Mail::to($input['email'])->send(new TransactionShipped($transaction));
 
-        if ('success' === htmlspecialchars($request->status)) return redirect(route('trainings.mine.show', htmlspecialchars($request->item_ref)));
-        return redirect(route('trainings.show', htmlspecialchars($request->item_ref)));
+        if ('success' === $input['status']) return redirect(route('trainings.mine.show', $input['item_ref']));
+        return redirect(route('trainings.show', $input['item_ref']));
     }
 }
