@@ -73,6 +73,7 @@ class MonetbilController extends Controller
      */
     public function notify(Request $request)
     {
+        return $request->all();
         $user = User::where('email', htmlspecialchars($request->email))->first();
 
         if (!$user) {
@@ -84,7 +85,7 @@ class MonetbilController extends Controller
 
         if (!$transaction) {
             $transaction = Transaction::create([
-                'amount' => htmlspecialchars($request->amount),
+                'amount' => htmlspecialchars($request->amount ? $request->amount : 0),
                 'tx_id' => htmlspecialchars($request->payment_ref),
                 'tx_hash' => htmlspecialchars($request->transaction_id),
                 'item_ref' => +htmlspecialchars($request->item_ref),
