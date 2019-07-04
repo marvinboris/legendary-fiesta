@@ -128,7 +128,7 @@ class MonetbilController extends Controller
         $transaction->save();
 
         // Notify the user through an email
-        Mail::to($input['email'])->send(new TransactionShipped($transaction));
+        Mail::to($input['email'])->send(new TransactionShipped($transaction))->subject('Informations sur la transaction');
 
         if ('success' === $input['status']) return redirect(route('trainings.mine.show', $input['item_ref']));
         return redirect(route('trainings.show', $input['item_ref']));
