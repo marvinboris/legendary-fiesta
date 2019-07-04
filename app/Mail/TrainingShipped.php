@@ -37,6 +37,7 @@ class TrainingShipped extends Mailable
         foreach ($this->trainings as $training) {
             $trainingsArray[] = $training;
         }
-        return $this->view('emails.trainings', compact('trainingsArray', 'user'));
+        return $this->subject('Mise à jour de la liste des formations')
+                    ->view('emails.trainings', compact('trainingsArray', 'user'));
     }
 }

@@ -31,7 +31,8 @@ class ContactShipped extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.contact')
+        return $this->subject('Nouveau message de contact')
+                    ->view('emails.contact')
                     ->with([
                         'name' => $this->contact['name'],
                         'email' => $this->contact['email'],

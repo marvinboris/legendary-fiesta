@@ -31,6 +31,7 @@ class TransactionShipped extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.transaction');
+        return $this->subject('Informations sur la transaction')
+                    ->view('emails.transaction');
     }
 }

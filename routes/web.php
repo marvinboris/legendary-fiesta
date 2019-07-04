@@ -45,7 +45,7 @@ Route::post('/contact', function (Request $request) {
     foreach ($validatedInput as $key => $value) {
         $validatedInput[$key] = htmlspecialchars($value);
     }
-    Mail::to('autoecoleuniversites@gmail.com')->send(new ContactShipped($validatedInput))->subject('Nouveau message de contact');
+    Mail::to('autoecoleuniversites@gmail.com')->send(new ContactShipped($validatedInput));
     Session::flash('sent_mail', 'Votre message a bel et bien été envoyé !');
     return redirect(url('/'));
 })->name('contact');
