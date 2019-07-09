@@ -24,6 +24,10 @@ header.container-fluid.auth-navbar {
     // width: calc(100% - var(--auth-navbar-width));
     flex: 0 0 calc(100%);
     // flex: 0 0 calc(100% - var(--auth-navbar-width));
+
+    #navbarSupportedContent {
+      margin-left: 200px;
+    }
   }
 }
 
@@ -55,8 +59,12 @@ main.auth-zone {
   }
 }
 
-@media screen and (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   main.auth-zone {
     margin-left: 0;
+  }
+
+  #navbarSupportedContent {
+    margin-left: 0px !important;
   }
 }

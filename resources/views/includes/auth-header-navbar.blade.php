@@ -3,7 +3,7 @@
         <a href="{{ url('/') }}">
             <img src="{{ url('/') . '/images/LOGO AUTO ECOLE UNIVERSITE.png' }}" alt="Logo" class="logo">
         </a>
-        <button class="btn btn-primary bg-primary-purple text-light d-md-none" type="button" data-toggle="collapse" data-target="#auth-aside-navbar" aria-controls="auth-aside-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="btn btn-primary bg-primary-purple text-light d-lg-none" type="button" data-toggle="collapse" data-target="#auth-aside-navbar" aria-controls="auth-aside-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-navicon fa-lg"></i>
         </button>
     </div>
@@ -15,7 +15,7 @@
                 <i class="fa fa-navicon fa-lg"></i>
             </button>
 
-            <div class="collapse navbar-collapse pt-3 pt-md-0" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse pt-3 pt-lg-0" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto text-uppercase">
                     <li class="nav-item font-weight-bold"><a href="{{ url('/') }}" class="nav-link {{ !Request::segment(1) ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-home"></i>Accueil</a></li>

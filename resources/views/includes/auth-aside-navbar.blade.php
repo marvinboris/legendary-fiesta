@@ -1,4 +1,4 @@
-<aside class="nav collapse d-md-block position-fixed font-family-raleway bg-primary-purple text-light border-right shadow-sm px-3 pb-3 align-content-start custom-scrollbar" id="auth-aside-navbar">
+<aside class="nav collapse d-lg-block position-fixed font-family-raleway bg-primary-purple text-light border-right shadow-sm px-3 pb-3 align-content-start custom-scrollbar" id="auth-aside-navbar">
     <div class="pt-3">
         <h6 class="text-uppercase small font-weight-thick">Navigation</h6>
         <nav class="nav flex-column border-left h6 text-white-50 font-weight-lighter">
