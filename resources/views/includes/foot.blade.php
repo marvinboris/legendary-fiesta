@@ -5,12 +5,12 @@
         <div class="spinner-border text-primary position-absolute" role="status"></div>
     </div>
     <script>
-        window.onload = function() {
-            $('.fixed-top').fadeOut(2000);
+        window.addEventListener('load', function () {
+            $('.fixed-top.loading').fadeOut(2000);
             setTimeout(() => {
-                $('.fixed-top').remove();
+                $('.fixed-top.loading').remove();
             }, 2000);
-        }
+        });
     </script>
     @yield('scripts')
 </body>

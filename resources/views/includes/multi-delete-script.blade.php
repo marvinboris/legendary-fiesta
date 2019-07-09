@@ -1,5 +1,5 @@
 <script>
-    document.body.onload = function () {
+    window.addEventListener('load', function () {
         const checkboxes = document.querySelectorAll('.checkbox');
 
         document.querySelector('#select-all').addEventListener('click', function () {
@@ -7,5 +7,5 @@
                 checkbox.checked = this.checked;
             }
         });
-    };
+    });
 </script>
