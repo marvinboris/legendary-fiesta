@@ -18,7 +18,7 @@
             <i class="fa fa-navicon fa-lg"></i>
         </button>
     </div>
-    <div class="right bg-white d-flex align-items-center w-100">
+    <div class="right bg-white d-flex align-items-center" style="width: 100%; flex: 0 0 100%;">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
             <button class="btn btn-primary bg-primary-purple text-light ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             {{-- <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> --}}
