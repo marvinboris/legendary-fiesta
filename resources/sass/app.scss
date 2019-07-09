@@ -36,9 +36,27 @@ body {
     font-family: Raleway, $my-font-family;
   }
 
-  footer .partners img {
-    width: 300px;
-    max-width: 100%;
+  footer { 
+    .partners img {
+      width: 300px;
+      max-width: 100%;
+    }
+  }
+
+  div.fixed-top.loading {
+    z-index: 20000;
+
+    div .logo {
+      height: 50px;
+    }
+
+    div.spinner-border {
+      width: 12rem;
+      height: 12rem;
+      z-index: -1;
+      top: calc(50% - 6rem);
+      left: calc(50% - 6rem);
+    }
   }
 }
 

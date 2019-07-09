@@ -253,7 +253,7 @@
             <div class="container py-5">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="text-uppercase text-center">PAIEMENT PAR CRYPTOMONNAIE OU LIMO</h1>
+                        <h1 class="text-uppercase text-center">PAIEMENT PAR CRYPTO MONNAIE OU LIMO</h1>
                         <p class="lead">
                             <u>Avantages :</u> Recevez des bonus chaque mois dans votre compte <a href="https://www.liyeplimal.net">Liyeplimal</a>.
                         </p>

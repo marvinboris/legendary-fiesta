@@ -35,92 +35,90 @@ class CoinpaymentsController extends Controller
     public function notify(Request $request)
     {
         // Check if the param invoice which contains the user_id exists
+        $input = $request->all();
+        foreach ($input as $key => $value) {
+            $input[$key] = htmlspecialchars($value);
+        }
 
-        if (!empty($request->invoice)) {
-            $user = User::find($request->invoice);
+        if (!empty(($request->has('invoice') ? $input['invoice'] : null))) {
+            $user = User::find(($request->has('invoice') ? $input['invoice'] : null));
+
             if (!$user) {
                 error_log("User not found");
                 die();
             }
 
-            $deposit = new Transaction([
-                'amount' => $request->amount,
-                'tx_id' => $request->txn_id,
+            $transaction = Transaction::create([
+                'amount' => ($request->has('amount') ? $input['amount'] : null),
+                'tx_id' => ($request->has('txn_id') ? $input['txn_id'] : null),
                 'user_id' => $user->id,
                 'vendor' => 'coinpayments',
                 'method' => 'crypto',
                 'type' => 'subscription',
                 'status' => 'pending',
-                'currency' => $request->currency2,
+                'currency' => ($request->has('currency2') ? $input['currency2'] : null),
             ]);
-
-            $deposit->save();
         }
-        // Handle deposit here .. 
-        $deposit = Transaction::where('tx_id', $request->txn_id)->first();
 
-        if ('simple' != $request->ipn_type || 'USD' != $request->currency1) {
+        // Handle deposit here .. 
+        $transaction = Transaction::where('tx_id', ($request->has('txn_id') ? $input['txn_id'] : null))->first();
+
+        if ('simple' != ($request->has('ipn_type') ? $input['ipn_type'] : null) || 'USD' != ($request->has('currency1') ? $input['currency1'] : null)) {
             die();
         }
 
-        if ($deposit) {
-            if ('completed' == $deposit->status) {
+        if ($transaction) {
+            if ('completed' == $transaction->status) {
                 die();
             } else {
-                if ($request->status >= 100) {
+                if (($request->has('status') ? $input['status'] : null) >= 100) {
                     //Check if the request status is greater than 100 then we give value to the user 
                     //Some conversions should be done before giving value to users 
-                    $amount = round($request->net, 8, PHP_ROUND_HALF_DOWN);
+                    $amount = round(($request->has('net') ? $input['net'] : null), 8, PHP_ROUND_HALF_DOWN);
 
-                    $deposit->status = 'completed';
-                    $deposit->amount = $amount;
-                    $deposit->save();
-
-                    // Sending mail to the user 
-                    // $user = User::where('id', $deposit->user_id)->first();
-                    // $user->notify(new TransactionsNotify($deposit));
-                } elseif ($request->status < 0) {
-                    $deposit->status = 'failed';
-                    $deposit->save();
+                    $transaction->status = 'completed';
+                    $transaction->amount = $amount;
+                    $transaction->save(); 
+                } elseif (($request->has('status') ? $input['status'] : null) < 0) {
+                    $transaction->status = 'failed';
+                    $transaction->save();
                 } else {
-                    $deposit->status = 'pending';
-                    $deposit->save();
+                    $transaction->status = 'pending';
+                    $transaction->save();
                 }
+                Mail::to($user->email)->send(new TransactionShipped($transaction));
             }
         } else {
-            $amount = round($request->net, 8, PHP_ROUND_HALF_DOWN);
-            $ref = $this->generateRef();
+            $amount = round(($request->has('net') ? $input['net'] : null), 8, PHP_ROUND_HALF_DOWN);
+            $ref = time();
 
-            $fees = round($request->fee, 8, PHP_ROUND_HALF_DOWN);
+            $fees = round(($request->has('fee') ? $input['fee'] : null), 8, PHP_ROUND_HALF_DOWN);
 
-            $deposit = new Transaction([
+            $transaction = Transaction::create([
                 'amount' => $amount,
-                'tx_id' => $request->txn_id,
+                'tx_id' => ($request->has('txn_id') ? $input['txn_id'] : null),
                 'tx_hash' => $ref,
-                'vendor' => 'coinpayment',
+                'vendor' => 'coinpayments',
                 'method' => 'crypto',
-                'address' => $request->address,
-                'ticker_symbol' => $request->currency2,
+                'address' => ($request->has('address') ? $input['address'] : null),
+                'ticker_symbol' => ($request->has('currency2') ? $input['currency2'] : null),
                 'type' => 'deposit',
                 'status' => 'pending',
             ]);
 
-            if ($request->status >= 100) {
+            if (($request->has('status') ? $input['status'] : null) >= 100) {
                 //Check if the request status is greater than 100 then we give value to the user 
                 //Some conversions should be done before giving value to users 
-                $deposit->status = 'completed';
-                $deposit->save();
-
-                // Notify the user through mail about the transaction
-                // $user = User::where('id', $deposit->user_id)->first();
-                // $user->notify(new TransactionsNotify($deposit));
-            } elseif ($request->status < 0) {
-                $deposit->status = 'failed';
-                $deposit->save();
+                $transaction->status = 'completed';
+                $transaction->save();
+            } elseif (($request->has('status') ? $input['status'] : null) < 0) {
+                $transaction->status = 'failed';
+                $transaction->save();
             } else {
-                $deposit->status = 'pending';
-                $deposit->save();
+                $transaction->status = 'pending';
+                $transaction->save();
             }
+            Mail::to($user->email)->send(new TransactionShipped($transaction));
         }
     }
 }

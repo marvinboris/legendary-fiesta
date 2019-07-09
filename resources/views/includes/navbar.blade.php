@@ -17,8 +17,13 @@
         <a class="navbar-brand img-responsive" href="{{ url('/') }}">
             <img src="{{ url('/') . '/images/LOGO AUTO ECOLE UNIVERSITE.png' }}" height="50" alt="Logo de l'auto école université">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
+        </button> --}}
+        <button class="btn btn-primary bg-primary-purple text-light ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        {{-- <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> --}}
+            {{-- <span class="navbar-toggler-icon"></span> --}}
+            <i class="fa fa-navicon fa-lg"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -1,7 +1,7 @@
 // Authenticated zone
 :root {
-  --auth-navbar-width: 250px;
-  --aside-nav-height: 59.28px;
+  --auth-navbar-width: 240px;
+  --aside-nav-height: 53px;
 }
 
 // Navbar
@@ -11,6 +11,8 @@ header.container-fluid.auth-navbar {
 
   div.left {
     width: var(--auth-navbar-width);
+    height: var(--aside-nav-height);
+    z-index: 1040;
 
     img.logo {
       width: 150px;
@@ -18,8 +20,10 @@ header.container-fluid.auth-navbar {
   }
 
   div.right {
-    width: calc(100% - var(--auth-navbar-width));
-    flex: 0 0 calc(100% - var(--auth-navbar-width));
+    width: calc(100%);
+    // width: calc(100% - var(--auth-navbar-width));
+    flex: 0 0 calc(100%);
+    // flex: 0 0 calc(100% - var(--auth-navbar-width));
   }
 }
 
@@ -28,6 +32,14 @@ aside.nav {
   width: var(--auth-navbar-width);
   top: var(--aside-nav-height);
   overflow-y: auto;
+  z-index: 1030;
+
+  .backdrop {
+    z-index: 1029;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5));
+  }
 }
 
 main.auth-zone {
@@ -40,5 +52,11 @@ main.auth-zone {
     img {
       height: 2rem;
     }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  main.auth-zone {
+    margin-left: 0;
   }
 }
