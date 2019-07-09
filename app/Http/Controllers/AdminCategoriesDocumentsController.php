@@ -102,7 +102,9 @@ class AdminCategoriesDocumentsController extends Controller
             $input[$key] = htmlspecialchars($value);
         }
         if ($file = $request->file('path')) {
-            unlink(public_path() . '/documents/' . $document->path);
+            $path = public_path() . '/documents/' . $document->path;
+            if (file_exists($path)) unlink($path);
+            else unlink(public_path() . '../www/documents/' . $document->path);
             $fileName = time() . $file->getClientOriginalName();
             $file->move('documents', $fileName);
             $input['path'] = htmlspecialchars($fileName);
@@ -124,7 +126,9 @@ class AdminCategoriesDocumentsController extends Controller
         //
         $document = Document::findOrFail($id);
         $document->delete();
-        unlink(public_path() . '/documents/' . $document->path);
+        $path = public_path() . '/documents/' . $document->path;
+        if (file_exists($path)) unlink($path);
+        else unlink(public_path() . '../www/documents/' . $document->path);
         Session::flash('deleted_document', 'Le document ' . $document->name . ' a été supprimé.');
         return redirect(route('admin.categories.documents.index'));
     }
@@ -135,13 +139,16 @@ class AdminCategoriesDocumentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function multiDelete(Request $request) {
+    public function multiDelete(Request $request)
+    {
         $checkboxes = $request->checkboxArray;
         $documents = array();
         foreach ($checkboxes as $id) {
             $documents[+$id] = Document::findOrFail(+$id);
             $documents[+$id]->delete();
-            unlink(public_path() . '/documents/' . $documents[+$id]->path);
+            $path = public_path() . '/documents/' . $documents[+$id]->path;
+            if (file_exists($path)) unlink($path);
+            else unlink(public_path() . '../www/documents/' . $documents[+$id]->path);
         }
         Session::flash('deleted_documents', $documents);
         return redirect(route('admin.categories.documents.index'));

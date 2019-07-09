@@ -1,5 +1,16 @@
+<style>
+    @media (max-width: 991.98px) {
+        main.auth-zone {
+            margin-left: 0;
+        }
+
+        #navbarSupportedContent {
+            margin-left: 0px !important;
+        }
+    }
+</style>
 <header class="container-fluid auth-navbar shadow-sm position-fixed d-flex p-0">
-    <div class="left bg-light border-right text-center position-absolute py-2 d-flex justify-content-around border-bottom align-items-center">
+    <div class="left bg-light border-right text-center position-absolute py-2 d-flex justify-content-around border-bottom align-items-center" style="width: 240px; height: 53px; z-index: 1040;">
         <a href="{{ url('/') }}">
             <img src="{{ url('/') . '/images/LOGO AUTO ECOLE UNIVERSITE.png' }}" alt="Logo" class="logo">
         </a>
@@ -7,7 +18,7 @@
             <i class="fa fa-navicon fa-lg"></i>
         </button>
     </div>
-    <div class="right bg-white d-flex align-items-center">
+    <div class="right bg-white d-flex align-items-center w-100">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
             <button class="btn btn-primary bg-primary-purple text-light ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             {{-- <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> --}}
@@ -15,7 +26,7 @@
                 <i class="fa fa-navicon fa-lg"></i>
             </button>
 
-            <div class="collapse navbar-collapse pt-3 pt-lg-0" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse pt-3 pt-lg-0" id="navbarSupportedContent" style="margin-left: 200px;">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto text-uppercase">
                     <li class="nav-item font-weight-bold"><a href="{{ url('/') }}" class="nav-link {{ !Request::segment(1) ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-home"></i>Accueil</a></li>
