@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ee9775743d67d106f7d9b72c70b60f3",
+    "content-hash": "2742978f3601b861e44ffa1501c9fbb4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -119,6 +119,65 @@
                 "laravel"
             ],
             "time": "2019-02-26T18:08:30+00:00"
+        },
+        {
+            "name": "coinpaymentsnet/coinpayments-php",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CoinPaymentsNet/coinpayments-php.git",
+                "reference": "72e1abd5cd83dd7d15b927fc278f80b2c1245623"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CoinPaymentsNet/coinpayments-php/zipball/72e1abd5cd83dd7d15b927fc278f80b2c1245623",
+                "reference": "72e1abd5cd83dd7d15b927fc278f80b2c1245623",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "/src"
+                ],
+                "exclude-from-classmap": [
+                    "/tests"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cole",
+                    "email": "cole@coinpayments.net",
+                    "homepage": "https://www.coinpayments.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP wrapper for the CoinPayments.net v1 API.",
+            "homepage": "https://www.coinpayments.net/apidoc-intro",
+            "keywords": [
+                "api",
+                "bitcoin",
+                "btc",
+                "coinpayments",
+                "crypto",
+                "cryptocurrency",
+                "currency",
+                "ethereum",
+                "litecoin",
+                "merchant",
+                "payment gateway",
+                "payment method",
+                "payment processor",
+                "paypal",
+                "php"
+            ],
+            "time": "2018-09-15T00:00:00+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",

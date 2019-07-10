@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('styles')
-    <link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
             <li class="breadcrumb-item"><a href="{{ route('admin.news.index') }}">Liste des actualités</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ $news->name }}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $news->title }}</li>
         </ol>
     </nav>
     <h2>
@@ -27,18 +27,21 @@
             <input type="text" name="title" id="title" class="form-control" value="{{ $news->title }}" required autofocus>
         </div>
         <div class="form-group">
-            <label for="description" class="control-label">Description</label>
-            <textarea name="description" id="description" class="form-control" required>{!! $news->description !!}</textarea>
+            <label for="summernote" class="control-label">Description</label>
+            <textarea name="description" id="summernote" class="form-control" required>{!! $news->description !!}</textarea>
         </div>
         <div class="form-group"><button class="btn btn-primary">Modifier</button></div>
     </form>
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js" defer></script>
     <script>
-        var quill = new Quill('#description', {
-            theme: 'bubble'
+        // var description = new Jodit('#description');
+        window.addEventListener('load', function () {
+            $(document).ready(function() {
+                $('#summernote').summernote();
+            });
         });
     </script>
 @endsection
