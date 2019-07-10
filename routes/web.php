@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactShipped;
+use App\News;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,9 @@ Route::get('/training', function () {
 })->name('training');
 
 Route::get('/news', function () {
-    return view('news');
+    $news = News::orderBy('created_at', 'desc')->get();
+    $index = 0;
+    return view('news', compact('news', 'index'));
 })->name('news');
 
 Route::post('/contact', function (Request $request) {
@@ -103,6 +106,9 @@ Route::middleware('auth')->group(function () {
 
         Route::name('admin.trainings.multi-delete')->delete('/admin/trainings/multi-delete', 'AdminTrainingsController@multiDelete');
         Route::name('admin')->resource('/admin/trainings', 'AdminTrainingsController');
+
+        Route::name('admin.news.multi-delete')->delete('/admin/news/multi-delete', 'AdminNewsController@multiDelete');
+        Route::name('admin')->resource('/admin/news', 'AdminNewsController');
     });
 
     Route::middleware('student')->group(function () {

@@ -37,19 +37,27 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function isAdmin() {
+    public function isAdmin()
+    {
         return $this->role->name === 'Administrateur';
     }
 
-    public function role() {
+    public function role()
+    {
         return $this->belongsTo('App\Role');
     }
 
-    public function trainings() {
+    public function trainings()
+    {
         return $this->belongsToMany('App\Training')->withPivot('created_at', 'updated_at');
     }
 
-    public function getUserAttribute($value)
+    public function news()
+    {
+        return $this->hasMany('App\News');
+    }
+
+    public function getNameAttribute($value)
     {
         return ucwords(strtolower($value));
     }
