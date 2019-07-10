@@ -22,6 +22,7 @@
     <p class="text-muted small pb-2 m-0 border-bottom">Vous pouvez ici modifier une actualité de l'application.</p>
     <form action="{{ route('admin.news.update', $news->id) }}" method="post" class="pt-3">
         @csrf
+        @method('patch')
         <div class="form-group">
             <label for="title" class="control-label">Titre</label>
             <input type="text" name="title" id="title" class="form-control" value="{{ $news->title }}" required autofocus>
