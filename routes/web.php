@@ -109,6 +109,10 @@ Route::middleware('auth')->group(function () {
 
         Route::name('admin.news.multi-delete')->delete('/admin/news/multi-delete', 'AdminNewsController@multiDelete');
         Route::name('admin')->resource('/admin/news', 'AdminNewsController');
+
+        Route::name('coinpayments')->group(function () {
+            Route::name('get-basic-info')->get('/coinpayments/get-basic-info', 'CoinpaymentsController@getBasicInfo');
+        });
     });
 
     Route::middleware('student')->group(function () {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Transaction;
 use GuzzleHttp\Client;
-use CoinPaymentsAPI;
+use CoinpaymentsAPI;
 
 class CoinpaymentsController extends Controller
 {
@@ -125,15 +125,17 @@ class CoinpaymentsController extends Controller
 
     private $public_key;
     private $private_key;
+    private $api;
 
     public function __construct()
     {
         $this->public_key = env('COINPAYMENTS_KEY');
         $this->private_key = env('COINPAYMENTS_SECRET');
+        $this->api = new CoinPaymentsAPI($this->private_key, $this->public_key, 'json');
     }
 
-    public function createTransaction()
+    public function getBasicInfo()
     {
-        $cps_api = new CoinPaymentsAPI($this->private_key, $this->public_key, 'json');
-     }
+        return dd($this->api->GetBasicInfo());
+    }
 }

@@ -65,7 +65,7 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body lead">
+            <div class="modal-body lead font-weight-normal">
                 <div class="first-page">
                     <p>Voici la liste des méthodes de paiement disponibles :</p>
                     <ul class="list-unstyled">
@@ -101,7 +101,7 @@
                         Bitcoin
                     </div>
                     <div class="limo-case d-none">
-                        Non disponible pour le moment.
+                        Veuillez effectuer le paiement de <strong class="text-purple">${{ ceil($training->cost*.8/545) }} LIMO</strong> sur la plateforme <a href="www.liyeplimal.net" target="_blank">Liyeplimal</a> au compte d'identifiant <strong>AF2V9F</strong> en précisant le motif (par exemple <em>Souscription à la formation "{{ $training->name }}" à l'auto-école Université</em>).
                     </div>
                     <div class="mobile_money-case d-none">
                         <a href="{{ $monetbil['link'] }}" target="_blank" class="btn btn-block btn-primary bg-primary-purple">
