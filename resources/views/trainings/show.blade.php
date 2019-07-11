@@ -72,13 +72,13 @@
                         <li>
                             <div class="custom-control custom-radio">
                                 <input type="radio" id="bitcoin" name="payment_method" value="bitcoin" class="custom-control-input">
-                                <label class="custom-control-label" for="bitcoin">Bitcoin (-5%)</label>
+                                <label class="custom-control-label" for="bitcoin">Bitcoin</label>
                             </div>
                         </li>
                         <li>
                             <div class="custom-control custom-radio">
                                 <input type="radio" id="limo" name="payment_method" value="limo" class="custom-control-input">
-                                <label class="custom-control-label" for="limo">Liyeplimal Money (-20%)</label>
+                                <label class="custom-control-label" for="limo">Liyeplimal Money</label>
                             </div>
                         </li>
                         <li>
@@ -98,10 +98,10 @@
                 </div>
                 <div class="second-page d-none">
                     <div class="bitcoin-case d-none">
-                        Bitcoin
+                        Non disponible pour le moment
                     </div>
                     <div class="limo-case d-none">
-                        Veuillez effectuer le paiement de <strong class="text-purple">${{ ceil($training->cost*.8/545) }} LIMO</strong> sur la plateforme <a href="www.liyeplimal.net" target="_blank">Liyeplimal</a> au compte d'identifiant <strong>AF2V9F</strong> en précisant le motif (par exemple <em>Souscription à la formation "{{ $training->name }}" à l'auto-école Université</em>).
+                        Veuillez effectuer le paiement de <strong class="text-purple">${{ ceil($training->cost/545) }} LIMO</strong> sur la plateforme <a href="www.liyeplimal.net" target="_blank">Liyeplimal</a> au compte d'identifiant <strong>AF2V9F</strong> en précisant le motif (par exemple <em>Souscription à la formation "{{ $training->name }}" à l'auto-école Université</em>).
                     </div>
                     <div class="mobile_money-case d-none">
                         <a href="{{ $monetbil['link'] }}" target="_blank" class="btn btn-block btn-primary bg-primary-purple">
