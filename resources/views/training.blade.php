@@ -28,13 +28,13 @@
                         <h1>Permis A</h1>
                         <ul class="fa-ul lead">
                             <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i>Âge : 16 ans et plus</li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 100 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 100 000 FCFA ($186 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 2 mois</li>
                                     <li>2h de théorie</li>
                                     <li>40min de pratique</li>
                                 </ul></li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation accélérée : 100 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation accélérée : 100 000 FCFA ($186 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée d'1 mois</li>
                                     <li>3h de théorie</li>
@@ -63,49 +63,49 @@
                             <ul class="fa-ul lead">
                                 <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i>Âge : 18 ans et plus</li>
                                 <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i><u>NB :</u> Pour les samedis et les jours fériés, les cours s'arrêtent à 14h.</li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 120 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 120 000 FCFA ($223 LIMO)
                                     <ul class="font-weight-light">
                                         <li>Durée de 2 mois</li>
                                         <li>2h de théorie</li>
                                         <li>45min de pratique</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation accélérée : 150 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation accélérée : 150 000 FCFA ($278 LIMO)
                                     <ul class="font-weight-light">
                                         <li>Durée d'1 mois</li>
                                         <li>3h de théorie</li>
                                         <li>90min de pratique</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation pro (Weekend + Soir) : 180 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation pro (Weekend + Soir) : 180 000 FCFA ($334 LIMO)
                                     <ul class="font-weight-light">
                                         <li>Durée de 2 mois</li>
                                         <li>2h de théorie (En soirée)</li>
                                         <li>60min de pratique (Samedi et Dimanche)</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation prestige : 200 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation prestige : 200 000 FCFA ($371 LIMO)
                                     <ul class="font-weight-light">
                                         <li>Durée de 10 jours</li>
                                         <li>3h de théorie (1 séance)</li>
                                         <li>90min de pratique (3 séances)</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation capacité (catégorie T) : 80 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Formation capacité (catégorie T) : 80 000 FCFA ($149 LIMO)
                                     <ul class="font-weight-light">
                                         <li>Durée de 10 jours</li>
                                         <li>30min de pratique (10 séances)</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Conduite de nuit : 100 000 FCFA
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Conduite de nuit : 100 000 FCFA ($186 LIMO)
                                     <ul class="font-weight-light">
                                         <li>Durée de 10 jours</li>
                                         <li>Tous les jours</li>
                                     </ul>
                                 </li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Permis international : 150 000 FCFA</li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Conversion permis : 150 000 FCFA</li>
-                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Extension (C, D, E, G) : 100 000 FCFA</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Permis international : 150 000 FCFA ($278 LIMO)</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Conversion permis : 150 000 FCFA ($278 LIMO)</li>
+                                <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Extension (C, D, E, G) : 100 000 FCFA ($186 LIMO)</li>
                                 <li class="font-weight-bold"><i class="fa fa-li fa-calendar"></i>Période de formation : 9h - 12h | 12h - 14h | 16h - 18h | 18h - 20h</li>
                             </ul>
                         </div>
@@ -121,13 +121,13 @@
                         <h1>Permis C</h1>
                         <ul class="fa-ul lead">
                             <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i>Permis B : 2 ans et plus</li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 500 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 500 000 FCFA ($926 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 2 mois</li>
                                     <li>2h de théorie</li>
                                     <li>40min de pratique</li>
                                 </ul></li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA ($463 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 15 jours</li>
                                     <li>40min de pratique</li>
@@ -152,14 +152,14 @@
                         <h1>Permis D</h1>
                         <ul class="fa-ul lead">
                             <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i>Permis C : 1 an et plus</li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 500 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 500 000 FCFA ($926 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 2 mois</li>
                                     <li>2h de théorie</li>
                                     <li>40min de pratique</li>
                                 </ul>
                             </li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA ($463 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 15 jours</li>
                                     <li>40min de pratique</li>
@@ -178,13 +178,13 @@
                         <h1>Permis E</h1>
                         <ul class="fa-ul lead">
                             <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i>Permis C : 2 ans et plus</li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 500 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 500 000 FCFA ($926 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 2 mois</li>
                                     <li>2h de théorie</li>
                                     <li>40min de pratique</li>
                                 </ul></li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA ($463 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 15 jours</li>
                                     <li>40min de pratique</li>
@@ -209,14 +209,14 @@
                         <h1>Permis G</h1>
                         <ul class="fa-ul lead">
                             <li class="font-weight-bold"><i class="fa fa-li fa-clock-o"></i>Candidature sur présentation du permis B</li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 700 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale : 700 000 FCFA ($1297 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 2 mois</li>
                                     <li>2h de théorie</li>
                                     <li>40min de pratique</li>
                                 </ul>
                             </li>
-                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA
+                            <li class="font-weight-bold"><i class="fa fa-li fa-usd"></i>Recyclage : 250 000 FCFA ($463 LIMO)
                                 <ul class="font-weight-light">
                                     <li>Durée de 15 jours</li>
                                     <li>40min de pratique</li>
@@ -260,19 +260,19 @@
                         <ul class="fa-ul lead">
                             <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation normale
                                 <ul class="font-weight-light">
-                                    <li>Coût : 150 000 FCFA</li>
+                                    <li>Coût : 150 000 FCFA ($278 LIMO)</li>
                                     <li>Bonus : 7 200 FCFA chaque mois pendant 1 an.</li>
                                 </ul>
                             </li>
                             <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation accélérée
                                 <ul class="font-weight-light">
-                                    <li>Coût : 250 000 FCFA</li>
+                                    <li>Coût : 250 000 FCFA ($463 LIMO)</li>
                                     <li>Bonus : 15 300 FCFA chaque mois pendant 1 an.</li>
                                 </ul>
                             </li>
                             <li class="font-weight-bold"><i class="fa fa-li fa-money"></i>Formation pro + Dossier d'examen
                                 <ul class="font-weight-light">
-                                    <li>Coût : 290 000 FCFA</li>
+                                    <li>Coût : 290 000 FCFA ($538 LIMO)</li>
                                     <li>Bonus : 15 300 FCFA chaque mois pendant 1 an.</li>
                                 </ul>
                             </li>
