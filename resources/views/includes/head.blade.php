@@ -22,5 +22,6 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
+    <meta name="google-site-verification" content="wiN4l8C_IVspmOnR3_wg0Mj4fkBj5-CVc81dRlUDEOY" />
 </head>
 <body>
