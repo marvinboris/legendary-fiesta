@@ -4,6 +4,10 @@
     Accueil |
 @endsection
 
+@section('styles')
+    <meta name="google-site-verification" content="wiN4l8C_IVspmOnR3_wg0Mj4fkBj5-CVc81dRlUDEOY" />
+@endsection
+
 @section('content')
     @if (Session::has('sent_mail'))
         <div class="alert alert-info position-fixed alert-dismissible fade show" style="top: 110px; width: calc(100% - 10px); left: 5px; z-index: 10000;">
