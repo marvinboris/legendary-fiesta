@@ -17,23 +17,133 @@
             </button>
         </div>
         <script>
-            window.onload = function () {
+            window.addEventListener('load', function () {
                 $(function () {
                     $('div.alert').delay(5000).remove();
                 });
-            };
+            });
         </script>
     @endif
     <div class="row m-0 home-page">
         <div class="col-12 p-0">
-            <div id="carousel-home-page" class="carousel slide carousel-fade" data-ride="carousel">
+            <div id="carousel-home-page" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carousel-home-page" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-home-page" data-slide-to="1"></li>
                     <li data-target="#carousel-home-page" data-slide-to="2"></li>
+                    <li data-target="#carousel-home-page" data-slide-to="3"></li>
+                    <li data-target="#carousel-home-page" data-slide-to="4"></li>
+                    <li data-target="#carousel-home-page" data-slide-to="5"></li>
+                    <li data-target="#carousel-home-page" data-slide-to="6"></li>
+                    <li data-target="#carousel-home-page" data-slide-to="7"></li>
                 </ol>
                 <div class="carousel-inner h-100">
-                    <div class="carousel-item h-100 active">
+                    <div data-interval="3000" class="carousel-item h-100 active">
+                        <div class="text-center text-light h-100">
+                            <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Salle de réunion de l'auto-école</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Salle de réunion de l'auto-école</h1>
+                                {{-- <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div> --}}
+                                @guest
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-interval="3000" class="carousel-item h-100">
+                        <div class="text-center text-light h-100">
+                            <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Direction technique</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Direction technique</h1>
+                                {{-- <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div> --}}
+                                @guest
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+                    <div data-interval="3000" class="carousel-item h-100">
+                        <div class="text-center text-light h-100">
+                            <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Direction technique</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Direction technique</h1>
+                                {{-- <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div> --}}
+                                @guest
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-interval="3000" class="carousel-item h-100">
+                        <div class="text-center text-light h-100">
+                            <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Direction marketing</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Direction marketing</h1>
+                                {{-- <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div> --}}
+                                @guest
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-interval="3000" class="carousel-item h-100">
+                        <div class="text-center text-light h-100">
+                            <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Accueil des nouveaux</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Accueil des nouveaux</h1>
+                                {{-- <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div> --}}
+                                @guest
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+                    <div data-interval="3000" class="carousel-item h-100">
+                        <div class="text-center text-light h-100">
+                            <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Accueil des nouveaux</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Accueil des nouveaux</h1>
+                                {{-- <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div> --}}
+                                @guest
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+                    <div data-interval="3000" class="carousel-item h-100">
+                        <div class="text-center text-light h-100">
+                            <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Accueil des nouveaux</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Accueil des nouveaux</h1>
+                                {{-- <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div> --}}
+                                @guest
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-interval="3000" class="carousel-item h-100">
+                        <div class="text-center text-light h-100">
+                            <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
+                                <h1 class="w-100 text-uppercase text-white d-md-none">Partenariat avec l'agence des hôtesses</h1>
+                                <h1 class="w-100 display-4 text-uppercase text-white d-none d-md-block">Partenariat avec l'agence des hôtesses</h1>
+                                {{-- <div class="lead w-100"><p>Apprenez à conduire avec les techniques de votre temps.</p></div> --}}
+                                @guest
+                                <div class="w-100"><a class="btn btn-light btn-lg" href="{{ route('register') }}">INSCRIPTION</a></div>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    {{-- <div data-interval="3000" class="carousel-item h-100 active">
                         <div class="text-center text-light h-100">
                             <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
                                 <h1 class="w-100 text-uppercase text-white d-md-none">Une nouvelle pédagogie de l'auto école</h1>
@@ -45,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item h-100">
+                    <div data-interval="3000" class="carousel-item h-100">
                         <div class="text-center text-light h-100">
                             <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
                                 <h1 class="w-100 text-uppercase text-white d-md-none">Paiement accepté</h1>
@@ -57,7 +167,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item h-100">
+                    <div data-interval="3000" class="carousel-item h-100">
                         <div class="text-center text-light h-100">
                             <div class="container d-flex flex-wrap justify-content-center align-items-center align-content-center h-100">
                                 <h1 class="w-100 text-uppercase text-white d-md-none">Plateforme d'e-learning</h1>
@@ -68,7 +178,8 @@
                                 @endguest
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
+
                 </div>
                 {{-- <a class="carousel-control-prev" href="#carousel-home-page" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -265,8 +376,8 @@
             </div>
         </div>
         <div class="col-12 maps">
-            <div class="row">
-                <iframe width="100%" height="440" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=La%20maison%20du%20bitcoin+(Auto-%C3%A9cole%20Universit%C3%A9)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <div class="container">
+                <iframe width="100%" height="300" src="https://maps.google.com/maps?width=700&amp;height=300&amp;hl=en&amp;q=La%20maison%20du%20bitcoin+(Auto-%C3%A9cole%20Universit%C3%A9)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 <div>
                     <small>Powered by <a href="https://embedgooglemaps.com/es/">embedgooglemaps ES</a> & <a href="https://lasagradafamiliatickets.de/la-sagrada-familia-ticket/">tickets</a></small>
                 </div>

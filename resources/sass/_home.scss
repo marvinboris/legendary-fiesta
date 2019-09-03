@@ -61,20 +61,59 @@
       &:nth-child(1) {
         background-image: linear-gradient(to right, rgba(52, 144, 220, 0.7), rgba(149, 97, 226, 0.7)),
           url("/images/auto1.jpg");
-        // background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('/images/auto1.jpg');
       }
 
       &:nth-child(2) {
         background-image: linear-gradient(to right, rgba(52, 144, 220, 0.7), rgba(149, 97, 226, 0.7)),
           url("/images/auto2.jpg");
-        // background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('/images/auto2.jpg');
       }
 
       &:nth-child(3) {
         background-image: linear-gradient(to right, rgba(52, 144, 220, 0.85), rgba(149, 97, 226, 0.85)),
           url("/images/WhatsApp-Image-2018-11-20-at-17.50.53.jpeg");
-        // background-image: linear-gradient(to right, rgba(0, 0, 0, .85), rgba(0, 0, 0, .85)), url('/images/WhatsApp-Image-2018-11-20-at-17.50.53.jpeg');
       }
+
+      // New Images
+      &:nth-child(1) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.4), rgba(149, 97, 226, 0.4)),
+          url("/images/DSC_0444.JPG");
+      }
+
+      &:nth-child(2) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.4), rgba(149, 97, 226, 0.4)),
+          url("/images/DSC_0433.JPG");
+      }
+
+      &:nth-child(3) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.4), rgba(149, 97, 226, 0.4)),
+          url("/images/DSC_0432.JPG");
+      }
+
+      &:nth-child(4) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.4), rgba(149, 97, 226, 0.4)),
+          url("/images/DSC_0429.JPG");
+      }
+
+      &:nth-child(5) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.4), rgba(149, 97, 226, 0.4)),
+          url("/images/DSC_0360.JPG");
+      }
+
+      &:nth-child(6) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.4), rgba(149, 97, 226, 0.4)),
+          url("/images/DSC_0359.JPG");
+      }
+
+      &:nth-child(7) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.4), rgba(149, 97, 226, 0.4)),
+          url("/images/DSC_0345.JPG");
+      }
+
+      &:nth-child(8) {
+        background-image: linear-gradient(to right, rgba(52, 144, 220, 0.4), rgba(149, 97, 226, 0.4)),
+          url("/images/DSC_0355.JPG");
+      }
+
 
       div.container {
         h1.d-md-none,
