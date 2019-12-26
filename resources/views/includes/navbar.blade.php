@@ -32,6 +32,16 @@
                 <li class="nav-item font-weight-bold"><a href="{{ url('/') }}" class="nav-link {{ !Request::segment(1) ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-home"></i>Accueil</a></li>
                 <li class="nav-item font-weight-bold"><a href="{{ route('training') }}" class="nav-link {{ Request::segment(1) === 'training' ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-graduation-cap"></i>Formations</a></li>
                 <li class="nav-item font-weight-bold"><a href="{{ route('news') }}" class="nav-link {{ Request::segment(1) === 'news' ? 'active' : null }}"><i class="fa fa-lg mr-1 fa-newspaper-o"></i>Actualités</a></li>
+                <li class="nav-item dropdown font-weight-bold">
+                    <a class="nav-link {{ Request::segment(1) === 'schools' ? 'active' : null }} dropdown-toggle" href="#" id="navbarDropdownSchools" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-lg mr-1 fa-handshake-o"></i>Universités
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownSchools">
+                        @foreach (App\School::all() as $school)
+                            <a class="dropdown-item" href="{{ route('schools', $school->id) }}">{{ $school->name }}</a>
+                        @endforeach
+                    </div>    
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->

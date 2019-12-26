@@ -60,6 +60,13 @@
                 <li class="nav-item"><a href="{{ route('admin.news.create') }}" class="nav-link text-light {{ (Request::segment(3) === 'news' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-plus-square-o mr-2"></i>Ajouter une actualité</a></li>
             </nav>
         </div>
+        <div class="pt-3">
+            <h6 class="text-uppercase small font-weight-thick">Universités</h6>
+            <nav class="nav flex-column border-left h6 text-white-50 font-weight-lighter">
+                <li class="nav-item"><a href="{{ route('admin.schools.index') }}" class="nav-link text-light {{ (Request::segment(3) === 'schools' AND !Request::segment(4)) ? 'active' : null }}"><i class="fa fa-handshake-o mr-2"></i>Liste des écoles</a></li>
+                <li class="nav-item"><a href="{{ route('admin.schools.create') }}" class="nav-link text-light {{ (Request::segment(3) === 'schools' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-hand-o-up mr-2"></i>Ajouter une école</a></li>
+            </nav>
+        </div>
     @endif
     <div class="pt-3">
         <h6 class="text-uppercase small font-weight-thick">Profil</h6>

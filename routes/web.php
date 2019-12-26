@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactShipped;
 use App\News;
+use App\School;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,11 @@ Route::get('/news', function () {
     $index = 0;
     return view('news', compact('news', 'index'));
 })->name('news');
+
+Route::get('/schools/{school}', function ($id) {
+    $school = School::findOrFail($id);
+    return view('schools', compact('school'));
+})->name('schools');
 
 Route::post('/contact', function (Request $request) {
     $validatedInput = $request->validate([
@@ -109,6 +115,9 @@ Route::middleware('auth')->group(function () {
 
         Route::name('admin.news.multi-delete')->delete('/admin/news/multi-delete', 'AdminNewsController@multiDelete');
         Route::name('admin')->resource('/admin/news', 'AdminNewsController');
+
+        Route::name('admin.schools.multi-delete')->delete('/admin/schools/multi-delete', 'AdminSchoolsController@multiDelete');
+        Route::name('admin')->resource('/admin/schools', 'AdminSchoolsController');
 
         Route::name('coinpayments')->group(function () {
             Route::name('get-basic-info')->get('/coinpayments/get-basic-info', 'CoinpaymentsController@getBasicInfo');
