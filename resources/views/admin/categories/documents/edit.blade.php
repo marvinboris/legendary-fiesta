@@ -4,7 +4,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url('/') }}">Accueil</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('admin.documents.index') }}">Liste des documents</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.categories.documents.index') }}">Liste des documents</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $document->name }}</li>
         </ol>
     </nav>
@@ -18,6 +18,7 @@
     <p class="text-muted small pb-2 m-0 border-bottom">Vous pouvez ici modifier un document de l'application.</p>
     <form action="{{ route('admin.categories.documents.update', $document->id) }}" method="post" class="pt-3" enctype="multipart/form-data">
         @csrf
+        @method('patch')
         <div class="form-group">
             <label for="name" class="control-label">Nom</label>
             <input type="text" name="name" id="name" class="form-control" value="{{ $document->name }}" required autofocus>
