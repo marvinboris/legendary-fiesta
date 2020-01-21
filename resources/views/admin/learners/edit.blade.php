@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label for="summernote" class="control-label">Rang</label>
-            <input type="number" name="rank" id="rank" class="form-control" required>
+            <input type="number" name="rank" id="rank" class="form-control" value="{{ $learner->rank }}" required>
         </div>
         <div class="form-group"><button class="btn btn-primary">Modifier</button></div>
     </form>
