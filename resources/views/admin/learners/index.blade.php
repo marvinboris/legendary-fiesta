@@ -28,7 +28,7 @@
     <h2>
         <span class="fa-stack small">
             <i class="fa fa-square fa-stack-2x text-primary"></i>
-            <i class="fa fa-handshake-o fa-stack-1x text-light"></i>
+            <i class="fa fa-graduation-cap fa-stack-1x text-light"></i>
         </span>
         Liste des apprenants
     </h2>

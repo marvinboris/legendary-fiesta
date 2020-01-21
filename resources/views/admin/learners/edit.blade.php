@@ -11,7 +11,7 @@
     <h2>
         <span class="fa-stack small">
             <i class="fa fa-square fa-stack-2x text-primary"></i>
-            <i class="fa fa-hand-o-up fa-stack-1x text-light"></i>
+            <i class="fa fa-user-plus fa-stack-1x text-light"></i>
         </span>
         Modifier un apprenant
     </h2>

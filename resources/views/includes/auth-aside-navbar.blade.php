@@ -70,8 +70,8 @@
         <div class="pt-3">
             <h6 class="text-uppercase small font-weight-thick">Apprenants</h6>
             <nav class="nav flex-column border-left h6 text-white-50 font-weight-lighter">
-                <li class="nav-item"><a href="{{ route('admin.learners.index') }}" class="nav-link text-light {{ (Request::segment(3) === 'learners' AND !Request::segment(4)) ? 'active' : null }}"><i class="fa fa-handshake-o mr-2"></i>Liste des apprenants</a></li>
-                <li class="nav-item"><a href="{{ route('admin.learners.create') }}" class="nav-link text-light {{ (Request::segment(3) === 'learners' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-hand-o-up mr-2"></i>Ajouter un apprenant</a></li>
+                <li class="nav-item"><a href="{{ route('admin.learners.index') }}" class="nav-link text-light {{ (Request::segment(3) === 'learners' AND !Request::segment(4)) ? 'active' : null }}"><i class="fa fa-graduation-cap mr-2"></i>Liste des apprenants</a></li>
+                <li class="nav-item"><a href="{{ route('admin.learners.create') }}" class="nav-link text-light {{ (Request::segment(3) === 'learners' AND Request::segment(4) === 'create') ? 'active' : null }}"><i class="fa fa-user-plus mr-2"></i>Ajouter un apprenant</a></li>
             </nav>
         </div>
     @endif
