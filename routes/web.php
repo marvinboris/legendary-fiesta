@@ -119,6 +119,9 @@ Route::middleware('auth')->group(function () {
         Route::name('admin.schools.multi-delete')->delete('/admin/schools/multi-delete', 'AdminSchoolsController@multiDelete');
         Route::name('admin')->resource('/admin/schools', 'AdminSchoolsController');
 
+        Route::name('admin.learners.multi-delete')->delete('/admin/learners/multi-delete', 'AdminlearnersController@multiDelete');
+        Route::name('admin')->resource('/admin/learners', 'AdminLearnersController');
+
         Route::name('coinpayments')->group(function () {
             Route::name('get-basic-info')->get('/coinpayments/get-basic-info', 'CoinpaymentsController@getBasicInfo');
         });
