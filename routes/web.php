@@ -2,6 +2,7 @@
 use App\User;
 use App\Training;
 use App\Document;
+use App\Learner;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -33,6 +34,11 @@ Auth::routes();
 Route::get('/training', function () {
     return view('training');
 })->name('training');
+
+Route::get('/learners', function () {
+    $learners = Learner::orderBy('rank')->get();
+    return view('learners', compact('learners'));
+})->name('learners');
 
 Route::get('/news', function () {
     $news = News::orderBy('created_at', 'desc')->get();
