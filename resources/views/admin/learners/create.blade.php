@@ -15,7 +15,7 @@
         Ajouter un apprenant
     </h2>
     <p class="text-muted small pb-2 m-0 border-bottom">Vous pouvez ici créer un apprenant et l'ajouter à l'application.</p>
-    <form action="{{ route('admin.schools.store') }}" method="post" class="pt-3">
+    <form action="{{ route('admin.learners.store') }}" method="post" class="pt-3">
         @csrf
         <div class="form-group">
             <label for="name" class="control-label">Nom</label>
